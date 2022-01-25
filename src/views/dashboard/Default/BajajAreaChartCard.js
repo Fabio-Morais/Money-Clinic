@@ -29,7 +29,7 @@ const BajajAreaChartCard = () => {
                 theme: 'light'
             }
         };
-        ApexCharts.exec(`support-chart`, 'updateOptions', newSupportChart);
+        ApexCharts.exec('support-chart', 'updateOptions', newSupportChart);
     }, [navType, orangeDark]);
 
     return (

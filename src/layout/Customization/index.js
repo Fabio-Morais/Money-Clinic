@@ -57,13 +57,13 @@ const Customization = () => {
 
     let initialFont;
     switch (customization.fontFamily) {
-        case `'Inter', sans-serif`:
+        case "'Inter', sans-serif":
             initialFont = 'Inter';
             break;
-        case `'Poppins', sans-serif`:
+        case "'Poppins', sans-serif":
             initialFont = 'Poppins';
             break;
-        case `'Roboto', sans-serif`:
+        case "'Roboto', sans-serif":
         default:
             initialFont = 'Roboto';
             break;
@@ -75,14 +75,14 @@ const Customization = () => {
         let newFont;
         switch (fontFamily) {
             case 'Inter':
-                newFont = `'Inter', sans-serif`;
+                newFont = "'Inter', sans-serif";
                 break;
             case 'Poppins':
-                newFont = `'Poppins', sans-serif`;
+                newFont = "'Poppins', sans-serif";
                 break;
             case 'Roboto':
             default:
-                newFont = `'Roboto', sans-serif`;
+                newFont = "'Roboto', sans-serif";
                 break;
         }
         dispatch({ type: SET_FONT_FAMILY, fontFamily: newFont });
