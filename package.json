@@ -1,8 +1,7 @@
 {
-    "name": "berry-material-react-free",
-    "version": "3.0.1",
-    "private": false,
-    "homepage": "https://berrydashboard.io/free",
+    "name": "money-clinic",
+    "version": "0.0.1",
+    "private": true,
     "dependencies": {
         "@emotion/cache": "^11.4.0",
         "@emotion/react": "^11.4.0",
@@ -13,7 +12,7 @@
         "@mui/styles": "^5.0.1",
         "@mui/system": "^5.0.3",
         "@mui/utils": "^5.0.1",
-        "@mui/x-data-grid": "^5.0.0-beta.3",
+        "@mui/x-data-grid": "^5.3.0",
         "@tabler/icons": "^1.39.1",
         "@testing-library/jest-dom": "^5.11.10",
         "@testing-library/react": "^11.2.6",
@@ -30,12 +29,13 @@
         "react-device-detect": "^1.17.0",
         "react-dom": "^17.0.2",
         "react-perfect-scrollbar": "^1.5.8",
-        "react-redux": "^7.2.3",
-        "react-router": "6.0.0-beta.0",
-        "react-router-dom": "6.0.0-beta.0",
+        "react-redux": "^7.2.6",
+        "react-router": "6.2.1",
+        "react-router-dom": "6.2.1",
         "react-scripts": "^5.0.0",
-        "redux": "^4.0.5",
-        "yup": "^0.32.9"
+        "redux": "^4.1.2",
+        "yarn": "^1.22.17",
+        "yup": "^0.32.11"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -68,18 +68,18 @@
     "devDependencies": {
         "@babel/core": "^7.14.8",
         "@babel/eslint-parser": "^7.15.8",
-        "eslint": "^7.27.0",
-        "eslint-config-airbnb-typescript": "^12.3.1",
+        "eslint": "^8.7.0",
+        "eslint-config-airbnb-typescript": "^16.1.0",
         "eslint-config-prettier": "^8.3.0",
-        "eslint-config-react-app": "6.0.0",
+        "eslint-config-react-app": "7.0.0",
         "eslint-import-resolver-typescript": "2.4.0",
-        "eslint-plugin-flowtype": "^5.7.2",
+        "eslint-plugin-flowtype": "^8.0.3",
         "eslint-plugin-import": "^2.23.3",
         "eslint-plugin-jsx-a11y": "6.3.1",
-        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.26.1",
         "eslint-plugin-react-hooks": "4.0.8",
-        "prettier": "^2.2.1",
-        "sass": "^1.42.1"
+        "prettier": "^2.5.1",
+        "sass": "^1.49.0"
     }
 }
