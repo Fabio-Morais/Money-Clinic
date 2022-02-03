@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 // material-ui
-import { useTheme, styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 
 // project imports
@@ -39,7 +39,7 @@ const CardWrapper = styled(MainCard)(({ theme }) => ({
 
 // ==============================|| DASHBOARD - TOTAL INCOME LIGHT CARD ||============================== //
 
-const TotalIncomeLightCard = ({ isLoading }) => {
+function TotalIncomeLightCard({ isLoading }) {
     const theme = useTheme();
 
     return (
@@ -90,7 +90,7 @@ const TotalIncomeLightCard = ({ isLoading }) => {
             )}
         </>
     );
-};
+}
 
 TotalIncomeLightCard.propTypes = {
     isLoading: PropTypes.bool

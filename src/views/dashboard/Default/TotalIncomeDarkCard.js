@@ -41,7 +41,7 @@ const CardWrapper = styled(MainCard)(({ theme }) => ({
 
 // ==============================|| DASHBOARD - TOTAL INCOME DARK CARD ||============================== //
 
-const TotalIncomeDarkCard = ({ isLoading }) => {
+function TotalIncomeDarkCard({ isLoading }) {
     const theme = useTheme();
 
     return (
@@ -90,7 +90,7 @@ const TotalIncomeDarkCard = ({ isLoading }) => {
             )}
         </>
     );
-};
+}
 
 TotalIncomeDarkCard.propTypes = {
     isLoading: PropTypes.bool

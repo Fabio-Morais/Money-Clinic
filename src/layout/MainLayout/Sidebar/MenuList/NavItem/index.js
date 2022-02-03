@@ -16,7 +16,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 // ==============================|| SIDEBAR MENU LIST ITEMS ||============================== //
 
-const NavItem = ({ item, level }) => {
+function NavItem({ item, level }) {
     const theme = useTheme();
     const dispatch = useDispatch();
     const customization = useSelector((state) => state.customization);
@@ -105,7 +105,7 @@ const NavItem = ({ item, level }) => {
             )}
         </ListItemButton>
     );
-};
+}
 
 NavItem.propTypes = {
     item: PropTypes.object,

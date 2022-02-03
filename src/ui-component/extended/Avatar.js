@@ -6,7 +6,7 @@ import MuiAvatar from '@mui/material/Avatar';
 
 // ==============================|| AVATAR ||============================== //
 
-const Avatar = ({ color, outline, size, sx, ...others }) => {
+function Avatar({ color, outline, size, sx, ...others }) {
     const theme = useTheme();
 
     const colorSX = color && !outline && { color: theme.palette.background.paper, bgcolor: `${color}.main` };
@@ -59,7 +59,7 @@ const Avatar = ({ color, outline, size, sx, ...others }) => {
     }
 
     return <MuiAvatar sx={{ ...colorSX, ...outlineSX, ...sizeSX, ...sx }} {...others} />;
-};
+}
 
 Avatar.propTypes = {
     className: PropTypes.string,

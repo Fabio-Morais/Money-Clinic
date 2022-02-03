@@ -64,7 +64,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
 
 // ==============================|| MAIN LAYOUT ||============================== //
 
-const MainLayout = () => {
+function MainLayout() {
     const theme = useTheme();
     const matchDownMd = useMediaQuery(theme.breakpoints.down('lg'));
 
@@ -111,6 +111,6 @@ const MainLayout = () => {
             <Customization />
         </Box>
     );
-};
+}
 
 export default MainLayout;
