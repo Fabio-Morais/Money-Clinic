@@ -1,10 +1,10 @@
-import dashboard from './dashboard';
-import other from './other';
+import dashboard from './dashboard'
+import other from './other'
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [dashboard, other]
-};
+  items: [dashboard, other]
+}
 
-export default menuItems;
+export default menuItems

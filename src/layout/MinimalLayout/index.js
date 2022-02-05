@@ -1,17 +1,17 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
 // project imports
-import Customization from '../Customization';
+import Customization from '../Customization'
 
 // ==============================|| MINIMAL LAYOUT ||============================== //
 
-function MinimalLayout() {
-    return (
-        <>
-            <Outlet />
-            <Customization />
-        </>
-    );
+function MinimalLayout () {
+  return (
+    <>
+      <Outlet />
+      <Customization />
+    </>
+  )
 }
 
-export default MinimalLayout;
+export default MinimalLayout
