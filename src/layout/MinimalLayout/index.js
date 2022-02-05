@@ -5,11 +5,13 @@ import Customization from '../Customization';
 
 // ==============================|| MINIMAL LAYOUT ||============================== //
 
-const MinimalLayout = () => (
-    <>
-        <Outlet />
-        <Customization />
-    </>
-);
+function MinimalLayout() {
+    return (
+        <>
+            <Outlet />
+            <Customization />
+        </>
+    );
+}
 
 export default MinimalLayout;

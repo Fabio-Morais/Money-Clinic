@@ -11,7 +11,7 @@ import { useTheme } from '@mui/material/styles';
 
 // ==============================|| LOGO SVG ||============================== //
 
-const Logo = () => {
+function Logo() {
     const theme = useTheme();
 
     return (
@@ -64,6 +64,6 @@ const Logo = () => {
             />
         </svg>
     );
-};
+}
 
 export default Logo;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
@@ -34,7 +34,7 @@ function valueText(value) {
 
 // ==============================|| LIVE CUSTOMIZATION ||============================== //
 
-const Customization = () => {
+function Customization() {
     const theme = useTheme();
     const dispatch = useDispatch();
     const customization = useSelector((state) => state.customization);
@@ -213,6 +213,6 @@ const Customization = () => {
             </Drawer>
         </>
     );
-};
+}
 
 export default Customization;
