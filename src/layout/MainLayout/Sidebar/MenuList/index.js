@@ -7,7 +7,7 @@ import menuItem from 'menu-items';
 
 // ==============================|| SIDEBAR MENU LIST ||============================== //
 
-const MenuList = () => {
+function MenuList() {
     const navItems = menuItem.items.map((item) => {
         switch (item.type) {
             case 'group':
@@ -22,6 +22,6 @@ const MenuList = () => {
     });
 
     return <>{navItems}</>;
-};
+}
 
 export default MenuList;

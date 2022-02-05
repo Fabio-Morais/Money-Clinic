@@ -14,7 +14,7 @@ import { gridSpacing } from 'store/constant';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
-const Dashboard = () => {
+function Dashboard() {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(false);
@@ -54,6 +54,6 @@ const Dashboard = () => {
             </Grid>
         </Grid>
     );
-};
+}
 
 export default Dashboard;

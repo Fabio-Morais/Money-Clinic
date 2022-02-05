@@ -10,7 +10,7 @@ import NavCollapse from '../NavCollapse';
 
 // ==============================|| SIDEBAR MENU LIST GROUP ||============================== //
 
-const NavGroup = ({ item }) => {
+function NavGroup({ item }) {
     const theme = useTheme();
 
     // menu list collapse & items
@@ -52,7 +52,7 @@ const NavGroup = ({ item }) => {
             <Divider sx={{ mt: 0.25, mb: 1.25 }} />
         </>
     );
-};
+}
 
 NavGroup.propTypes = {
     item: PropTypes.object

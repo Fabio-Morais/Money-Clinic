@@ -14,7 +14,7 @@ import NavigationScroll from 'layout/NavigationScroll';
 
 // ==============================|| APP ||============================== //
 
-const App = () => {
+function App() {
     const customization = useSelector((state) => state.customization);
 
     return (
@@ -27,6 +27,6 @@ const App = () => {
             </ThemeProvider>
         </StyledEngineProvider>
     );
-};
+}
 
 export default App;
