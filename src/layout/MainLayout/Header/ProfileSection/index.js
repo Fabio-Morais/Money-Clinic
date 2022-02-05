@@ -34,7 +34,7 @@ import { IconLogout, IconSettings } from '@tabler/icons';
 
 // ==============================|| PROFILE MENU ||============================== //
 
-await function ProfileSection() {
+function ProfileSection() {
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
     const navigate = useNavigate();
@@ -213,6 +213,6 @@ await function ProfileSection() {
             </Popper>
         </>
     );
-};
+}
 
 export default ProfileSection;
