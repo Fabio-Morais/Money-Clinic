@@ -17,6 +17,14 @@ const other = {
             url: '/sample-page',
             icon: icons.IconBrandChrome,
             breadcrumbs: false
+        },
+        {
+            id: 'monthly-expenses',
+            title: 'Monthly Expenses',
+            type: 'item',
+            url: '/monthly-expenses',
+            icon: icons.IconBrandChrome,
+            breadcrumbs: false
         }
     ]
 };

@@ -10,6 +10,9 @@ const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')))
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
 
+// monthly expenses page routing
+const MonthlyExpenses = Loadable(lazy(() => import('views/monthly-expenses-page')));
+
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -27,6 +30,10 @@ const MainRoutes = {
         {
             path: '/sample-page',
             element: <SamplePage />
+        },
+        {
+            path: '/monthly-expenses',
+            element: <MonthlyExpenses />
         }
     ]
 };
