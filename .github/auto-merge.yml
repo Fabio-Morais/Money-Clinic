@@ -3,8 +3,6 @@ reportStatus: true
 
 blockingLabels:
 - blocked
-
-
 requiredLabels:
 - merge
 
