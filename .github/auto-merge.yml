@@ -1,0 +1,12 @@
+deleteBranchAfterMerge: true
+reportStatus: true
+
+blockingLabels:
+- blocked
+
+
+requiredLabels:
+- merge
+
+mergeMethod: squash
+mergeCommitMessage: "{title} (#{number})"
