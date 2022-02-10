@@ -39,7 +39,7 @@ function BajajAreaChartCard() {
                     <Grid container alignItems="center" justifyContent="space-between">
                         <Grid item>
                             <Typography variant="subtitle1" sx={{ color: theme.palette.secondary.dark }}>
-                                Bajaj Finery
+                                Safe to spend
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -51,7 +51,7 @@ function BajajAreaChartCard() {
                 </Grid>
                 <Grid item xs={12}>
                     <Typography variant="subtitle2" sx={{ color: theme.palette.grey[800] }}>
-                        10% Profit
+                        On track
                     </Typography>
                 </Grid>
             </Grid>
