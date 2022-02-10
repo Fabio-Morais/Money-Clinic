@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Deploy to Heroku
-        uses: Fabio-Morais/Money-Clinic@main
+        uses: Fabio-Morais/Money-Clinic@master
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
