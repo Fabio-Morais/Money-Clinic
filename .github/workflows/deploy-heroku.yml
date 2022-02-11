@@ -30,8 +30,6 @@ jobs:
           fetch-depth: 0
       - name: Delete lock files
         run:  rm -rf lock
-      - name: Delete .git
-        run: rm -rf .git
       - name: Heroku login credentials
         run: |
           cat > ~/.netrc <<EOF
