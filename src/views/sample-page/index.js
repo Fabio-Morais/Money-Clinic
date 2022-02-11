@@ -2,7 +2,7 @@
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
-import EarningCard from 'charts/EarningCard';
+import EarningCard from './EarningCard';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
