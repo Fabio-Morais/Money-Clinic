@@ -43,6 +43,12 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+      - name: a
+        run: git init
+      - name: b
+        run: git add .
+      - name: c
+        run: git commit -m "my first commit"
       - name: Add Heroku remote
         run: heroku git:remote --app moneyclinic
         env:
