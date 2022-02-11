@@ -1,4 +1,4 @@
-name: deploy
+name: heroku-deploy
 on: push
 
 jobs:
