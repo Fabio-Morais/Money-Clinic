@@ -8,9 +8,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Delete package-lock
-        run: rm package-lock.json
-      - name: Delete yarn.lock
-        run: rm yarn.lock
+        run:  rm package-lock.json
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
