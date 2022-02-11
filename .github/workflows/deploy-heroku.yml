@@ -20,8 +20,8 @@ jobs:
 
 
 #  custom-deploy:
-    # The `needs` is added to bypass:
-    # "Your account has reached its concurrent builds limit"
+#    # The `needs` is added to bypass:
+#    # "Your account has reached its concurrent builds limit"
 #    needs: heroku-deploy
 #    runs-on: ubuntu-latest
 #    steps:
