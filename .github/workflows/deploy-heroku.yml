@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+      - name: Delete some files
+        run: rm package-lock.json
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
