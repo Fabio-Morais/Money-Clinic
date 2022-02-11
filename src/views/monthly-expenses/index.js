@@ -2,16 +2,16 @@
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
-import EarningCard from 'ui-component/cards/Skeleton/EarningCard';
+import EarningCard from './EarningCard';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-function SamplePage() {
+function MonthlyExpenses() {
     return (
-        <MainCard title="Sample Card">
+        <MainCard title="Monthly Expenses">
             <EarningCard />
         </MainCard>
     );
 }
 
-export default SamplePage;
+export default MonthlyExpenses;
