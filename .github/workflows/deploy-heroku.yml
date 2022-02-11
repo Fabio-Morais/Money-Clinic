@@ -2,56 +2,50 @@ name: heroku-deploy
 on: push
 
 jobs:
-#  heroku-deploy:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Check out repository
-#        uses: actions/checkout@v2
-#      - name: Delete package-lock
-#        run:  rm package-lock.json
-#      - name: Delete yarn.lock
-#        run:  rm yarn.lock
-#      - name: Deploy to Heroku
-#        uses: akhileshns/heroku-deploy@master
-#        with:
-#          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-#          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-#          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-
-
-  custom-deploy:
-    # The `needs` is added to bypass:
-    # "Your account has reached its concurrent builds limit"
+  heroku-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+      - name: Delete package-lock
+        run:  rm package-lock.json
+      - name: Delete yarn.lock
+        run:  rm yarn.lock
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@master
         with:
-          fetch-depth: 0
-      - name: Delete lock files
-        run:  rm -rf lock
-      - name: Heroku login credentials
-        run: |
-          cat > ~/.netrc <<EOF
-            machine api.heroku.com
-              login $HEROKU_EMAIL
-              password $HEROKU_API_KEY
-            machine git.heroku.com
-              login $HEROKU_EMAIL
-              password $HEROKU_API_KEY
-          EOF
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      - name: a
-        run: git init
-      - name: b
-        run: git add .
-      - name: c
-        run: git commit -m "my first commit"
-      - name: Add Heroku remote
-        run: heroku git:remote --app moneyclinic
-        env:
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      - name: Push to Heroku
-        run: git push heroku HEAD:master
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
+
+#  custom-deploy:
+#    # The `needs` is added to bypass:
+#    # "Your account has reached its concurrent builds limit"
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out repository
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+#      - name: Delete lock files
+#        run:  rm -rf lock
+#      - name: Heroku login credentials
+#        run: |
+#          cat > ~/.netrc <<EOF
+#            machine api.heroku.com
+#              login $HEROKU_EMAIL
+#              password $HEROKU_API_KEY
+#            machine git.heroku.com
+#              login $HEROKU_EMAIL
+#              password $HEROKU_API_KEY
+#          EOF
+#        env:
+#          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+#      - name: Add Heroku remote
+#        run: heroku git:remote --app moneyclinic
+#        env:
+#          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+#      - name: Push to Heroku
+#        run: git push heroku HEAD:master
