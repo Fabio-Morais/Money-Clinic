@@ -43,7 +43,7 @@ function PopularCard({ isLoading }) {
                             <Grid item xs={12}>
                                 <Grid container alignContent="center" justifyContent="space-between">
                                     <Grid item>
-                                        <Typography variant="h4">Popular Stocks</Typography>
+                                        <Typography variant="h4">Monthly Budget</Typography>
                                     </Grid>
                                     <Grid item>
                                         <MoreHorizOutlinedIcon
@@ -88,7 +88,7 @@ function PopularCard({ isLoading }) {
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
                                                 <Typography variant="subtitle1" color="inherit">
-                                                    Bajaj Finery
+                                                    Home expenses
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
@@ -119,7 +119,7 @@ function PopularCard({ isLoading }) {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="subtitle2" sx={{ color: 'success.dark' }}>
-                                            10% Profit
+                                            10%
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -129,7 +129,7 @@ function PopularCard({ isLoading }) {
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
                                                 <Typography variant="subtitle1" color="inherit">
-                                                    TTML
+                                                    Food
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
@@ -160,7 +160,7 @@ function PopularCard({ isLoading }) {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="subtitle2" sx={{ color: theme.palette.orange.dark }}>
-                                            25% Loss
+                                            25%
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -170,7 +170,7 @@ function PopularCard({ isLoading }) {
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
                                                 <Typography variant="subtitle1" color="inherit">
-                                                    Reliance
+                                                    Transportation
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
@@ -201,7 +201,7 @@ function PopularCard({ isLoading }) {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="subtitle2" sx={{ color: theme.palette.success.dark }}>
-                                            70% Profit
+                                            70%
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -211,7 +211,7 @@ function PopularCard({ isLoading }) {
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
                                                 <Typography variant="subtitle1" color="inherit">
-                                                    TTML
+                                                    Leisure
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
@@ -242,7 +242,7 @@ function PopularCard({ isLoading }) {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="subtitle2" sx={{ color: theme.palette.orange.dark }}>
-                                            10% Loss
+                                            100%
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -252,7 +252,7 @@ function PopularCard({ isLoading }) {
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
                                                 <Typography variant="subtitle1" color="inherit">
-                                                    Stolon
+                                                    Others
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
@@ -283,7 +283,7 @@ function PopularCard({ isLoading }) {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="subtitle2" sx={{ color: theme.palette.orange.dark }}>
-                                            40% Loss
+                                            40%
                                         </Typography>
                                     </Grid>
                                 </Grid>
