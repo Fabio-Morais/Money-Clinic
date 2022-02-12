@@ -11,8 +11,6 @@ jobs:
         run:  rm package-lock.json
       - name: Delete yarn.lock
         run:  rm yarn.lock
-      - name: GIt remote
-        run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@master
         with:
