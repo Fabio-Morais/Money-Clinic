@@ -12,6 +12,8 @@ const SamplePage = Loadable(lazy(() => import('views/sample-page')));
 
 const MonthlyExpenses = Loadable(lazy(() => import('views/monthly-expenses')));
 
+const Crypto = Loadable(lazy(() => import('views/wallet/Crypto')));
+
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -33,6 +35,14 @@ const MainRoutes = {
         {
             path: '/monthly-expenses',
             element: <MonthlyExpenses />
+        },
+        {
+            path: '/monthly-expenses',
+            element: <MonthlyExpenses />
+        },
+        {
+            path: '/crypto',
+            element: <Crypto />
         }
     ]
 };
