@@ -45,7 +45,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "lint": "eslint ."
+        "lint": "eslint src/ --color",
+        "lint-to-file": "eslint src/ -f json -o eslint.json",
+        "prettier": "prettier --check src/"
     },
     "eslintConfig": {
         "extends": [
