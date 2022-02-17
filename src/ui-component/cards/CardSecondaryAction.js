@@ -7,7 +7,7 @@ import Avatar from '../extended/Avatar';
 
 // ==============================|| CARD SECONDARY ACTION ||============================== //
 
-const CardSecondaryAction = ({ title, link, icon }) => {
+function CardSecondaryAction({ title, link, icon }) {
     const theme = useTheme();
 
     return (
@@ -47,7 +47,7 @@ const CardSecondaryAction = ({ title, link, icon }) => {
             </ButtonBase>
         </Tooltip>
     );
-};
+}
 
 CardSecondaryAction.propTypes = {
     icon: PropTypes.node,
