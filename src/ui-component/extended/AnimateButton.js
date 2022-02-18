@@ -8,6 +8,7 @@ import { motion, useCycle } from 'framer-motion';
 const AnimateButton = forwardRef(({ children, type, direction, offset, scale }, ref) => {
     let offset1;
     let offset2;
+    let scaleAux = scale;
     switch (direction) {
         case 'up':
         case 'left':
@@ -63,13 +64,13 @@ const AnimateButton = forwardRef(({ children, type, direction, offset, scale }, 
         case 'scale':
         default:
             if (typeof scale === 'number') {
-                scale = {
+                scaleAux = {
                     hover: scale,
                     tap: scale
                 };
             }
             return (
-                <motion.div ref={ref} whileHover={{ scale: scale?.hover }} whileTap={{ scale: scale?.tap }}>
+                <motion.div ref={ref} whileHover={{ scale: scaleAux?.hover }} whileTap={{ scale: scaleAux?.tap }}>
                     {children}
                 </motion.div>
             );
