@@ -1,9 +1,6 @@
 # PoupaSimples
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Fabio-Morais_Money-Clinic&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Fabio-Morais_Money-Clinic)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Fabio-Morais_Money-Clinic&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Fabio-Morais_Money-Clinic)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Fabio-Morais_Money-Clinic&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Fabio-Morais_Money-Clinic)
-
+[![DeepSource](https://deepsource.io/gh/Fabio-Morais/Money-Clinic.svg/?label=active+issues&show_trend=true&token=0oUZz7OyTxUVZcbwMY2LEij8)](https://deepsource.io/gh/Fabio-Morais/Money-Clinic/?ref=repository-badge)
 
 # How to add new features:
 
