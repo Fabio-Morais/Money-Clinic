@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Button, CardActions, CardContent, Divider, Grid, Menu, MenuItem, Typography } from '@mui/material';
+import { Button, CardActions, CardContent, Divider, Grid, Menu, MenuItem, Typography } from '@mui/material';
 
 // project imports
 import BajajAreaChartCard from './BajajAreaChartCard';
@@ -14,9 +14,6 @@ import { gridSpacing } from 'store/constant';
 // assets
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
-import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
-
 // ==============================|| DASHBOARD DEFAULT - POPULAR CARD ||============================== //
 
 function PopularCard({ isLoading }) {
@@ -95,31 +92,16 @@ function PopularCard({ isLoading }) {
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
                                                         <Typography variant="subtitle1" color="inherit">
-                                                            $1839.00
+                                                            1839.00€
                                                         </Typography>
-                                                    </Grid>
-                                                    <Grid item>
-                                                        <Avatar
-                                                            variant="rounded"
-                                                            sx={{
-                                                                width: 16,
-                                                                height: 16,
-                                                                borderRadius: '5px',
-                                                                backgroundColor: theme.palette.success.light,
-                                                                color: theme.palette.success.dark,
-                                                                ml: 2
-                                                            }}
-                                                        >
-                                                            <KeyboardArrowUpOutlinedIcon fontSize="small" color="inherit" />
-                                                        </Avatar>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle2" sx={{ color: 'success.dark' }}>
-                                            10%
+                                        <Typography variant="subtitle2" sx={{ color: 'black' }}>
+                                            1850.00€
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -139,28 +121,13 @@ function PopularCard({ isLoading }) {
                                                             $100.00
                                                         </Typography>
                                                     </Grid>
-                                                    <Grid item>
-                                                        <Avatar
-                                                            variant="rounded"
-                                                            sx={{
-                                                                width: 16,
-                                                                height: 16,
-                                                                borderRadius: '5px',
-                                                                backgroundColor: theme.palette.orange.light,
-                                                                color: theme.palette.orange.dark,
-                                                                marginLeft: 1.875
-                                                            }}
-                                                        >
-                                                            <KeyboardArrowDownOutlinedIcon fontSize="small" color="inherit" />
-                                                        </Avatar>
-                                                    </Grid>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle2" sx={{ color: theme.palette.orange.dark }}>
-                                            25%
+                                        <Typography variant="subtitle2" sx={{ color: 'black' }}>
+                                            100.00€
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -176,32 +143,17 @@ function PopularCard({ isLoading }) {
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="subtitle1" color="inherit">
-                                                            $200.00
+                                                        <Typography variant="subtitle1" color="red">
+                                                            200.00€
                                                         </Typography>
-                                                    </Grid>
-                                                    <Grid item>
-                                                        <Avatar
-                                                            variant="rounded"
-                                                            sx={{
-                                                                width: 16,
-                                                                height: 16,
-                                                                borderRadius: '5px',
-                                                                backgroundColor: theme.palette.success.light,
-                                                                color: theme.palette.success.dark,
-                                                                ml: 2
-                                                            }}
-                                                        >
-                                                            <KeyboardArrowUpOutlinedIcon fontSize="small" color="inherit" />
-                                                        </Avatar>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle2" sx={{ color: theme.palette.success.dark }}>
-                                            70%
+                                        <Typography variant="subtitle2" sx={{ color: 'black' }}>
+                                            150.00€
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -217,32 +169,17 @@ function PopularCard({ isLoading }) {
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="subtitle1" color="inherit">
-                                                            $189.00
+                                                        <Typography variant="subtitle1" color="red">
+                                                            189.00€
                                                         </Typography>
-                                                    </Grid>
-                                                    <Grid item>
-                                                        <Avatar
-                                                            variant="rounded"
-                                                            sx={{
-                                                                width: 16,
-                                                                height: 16,
-                                                                borderRadius: '5px',
-                                                                backgroundColor: theme.palette.orange.light,
-                                                                color: theme.palette.orange.dark,
-                                                                ml: 2
-                                                            }}
-                                                        >
-                                                            <KeyboardArrowDownOutlinedIcon fontSize="small" color="inherit" />
-                                                        </Avatar>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle2" sx={{ color: theme.palette.orange.dark }}>
-                                            100%
+                                        <Typography variant="subtitle2" sx={{ color: 'black' }}>
+                                            100.00€
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -259,31 +196,16 @@ function PopularCard({ isLoading }) {
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
                                                         <Typography variant="subtitle1" color="inherit">
-                                                            $189.00
+                                                            159.00€
                                                         </Typography>
-                                                    </Grid>
-                                                    <Grid item>
-                                                        <Avatar
-                                                            variant="rounded"
-                                                            sx={{
-                                                                width: 16,
-                                                                height: 16,
-                                                                borderRadius: '5px',
-                                                                backgroundColor: theme.palette.orange.light,
-                                                                color: theme.palette.orange.dark,
-                                                                ml: 2
-                                                            }}
-                                                        >
-                                                            <KeyboardArrowDownOutlinedIcon fontSize="small" color="inherit" />
-                                                        </Avatar>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle2" sx={{ color: theme.palette.orange.dark }}>
-                                            40%
+                                        <Typography variant="subtitle2" sx={{ color: 'black' }}>
+                                            160.00€
                                         </Typography>
                                     </Grid>
                                 </Grid>

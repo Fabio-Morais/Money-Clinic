@@ -1,8 +1,8 @@
 // assets
-import { IconBrandChrome, IconHelp } from '@tabler/icons';
+import { IconBrandChrome, IconReceiptTax } from '@tabler/icons';
 
 // constant
-const icons = { IconBrandChrome, IconHelp };
+const icons = { IconBrandChrome, IconReceiptTax };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
@@ -20,10 +20,10 @@ const other = {
         },
         {
             id: 'monthly-expenses',
-            title: 'Monthly Expenses',
+            title: 'Expenses',
             type: 'item',
             url: '/monthly-expenses',
-            icon: icons.IconBrandChrome,
+            icon: icons.IconReceiptTax,
             breadcrumbs: false
         }
     ]
