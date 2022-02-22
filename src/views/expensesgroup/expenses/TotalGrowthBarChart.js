@@ -20,10 +20,6 @@ import chartData from './chart-data/total-growth-bar-chart';
 
 const status = [
     {
-        value: 'today',
-        label: 'Today'
-    },
-    {
         value: 'month',
         label: 'This Month'
     },
@@ -36,7 +32,7 @@ const status = [
 // ==============================|| DASHBOARD DEFAULT - TOTAL GROWTH BAR CHART ||============================== //
 
 function TotalGrowthBarChart({ isLoading }) {
-    const [value, setValue] = useState('today');
+    const [value, setValue] = useState('year');
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
 
@@ -103,7 +99,7 @@ function TotalGrowthBarChart({ isLoading }) {
                                             <Typography variant="subtitle2">Total expenses</Typography>
                                         </Grid>
                                         <Grid item>
-                                            <Typography variant="h3">$2,324.00</Typography>
+                                            <Typography variant="h3">2,324.00€</Typography>
                                         </Grid>
                                     </Grid>
                                 </Grid>
