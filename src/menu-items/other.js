@@ -17,14 +17,6 @@ const other = {
             url: '/sample-page',
             icon: icons.IconBrandChrome,
             breadcrumbs: false
-        },
-        {
-            id: 'monthly-expenses',
-            title: 'Expenses',
-            type: 'item',
-            url: '/monthly-expenses',
-            icon: icons.IconReceiptTax,
-            breadcrumbs: false
         }
     ]
 };
