@@ -1,12 +1,12 @@
 import dashboard from './dashboard';
-import expenseswrap from './expenseswrap';
+import expenses from './expenses';
 import other from './other';
 import wallet from './wallet';
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [dashboard, other, wallet, expenseswrap]
+    items: [dashboard, other, wallet, expenses]
 };
 
 export default menuItems;

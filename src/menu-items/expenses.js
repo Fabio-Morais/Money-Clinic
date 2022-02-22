@@ -6,8 +6,8 @@ const icons = { IconReceiptTax };
 
 // ==============================|| WALLET MENU ITEMS ||============================== //
 
-const expenseswrap = {
-    id: 'expenseswrap',
+const expenses = {
+    id: 'expenses',
     title: 'Expenses',
     type: 'group',
     children: [
@@ -22,4 +22,4 @@ const expenseswrap = {
     ]
 };
 
-export default expenseswrap;
+export default expenses;
