@@ -4,6 +4,11 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Fabio-Morais_Money-Clinic&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Fabio-Morais_Money-Clinic)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Fabio-Morais_Money-Clinic&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Fabio-Morais_Money-Clinic)
 
+# Useful development links:
+* Template documentation: https://codedthemes.gitbook.io/berry/
+* MUI components: https://mui.com/components/
+* Icons: https://tablericons.com
+* Build: http://moneyclinic.herokuapp.com
 
 # How to add new features:
 
