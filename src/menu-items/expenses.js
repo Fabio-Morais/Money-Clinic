@@ -18,6 +18,14 @@ const expenses = {
             url: '/expenses',
             icon: icons.IconReceiptTax,
             breadcrumbs: false
+        },
+        {
+            id: 'addexpense',
+            title: 'Add Expenses',
+            type: 'item',
+            url: '/addexpense',
+            icon: icons.IconReceiptTax,
+            breadcrumbs: false
         }
     ]
 };
