@@ -39,6 +39,7 @@
   "rules": {
     "react/jsx-filename-extension": 0,
     "react/jsx-no-useless-fragment": 0,
+    "react/prop-types": 0,
     "default-param-last": 0,
     "react/react-in-jsx-scope": 0,
     "react/require-default-props": 0,
