@@ -31,7 +31,7 @@ const rows = [
 ];
 function WalletCrypto() {
     return (
-        <MainCard title="Kraken">
+        <MainCard title="Krakenn">
             <DataGrid rows={rows} currency="€" />
         </MainCard>
     );
