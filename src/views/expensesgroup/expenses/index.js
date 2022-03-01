@@ -10,7 +10,7 @@ import { gridSpacing } from 'store/constant';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-function MonthlyExpenses() {
+function Expenses() {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(false);
@@ -30,4 +30,4 @@ function MonthlyExpenses() {
         </Grid>
     );
 }
-export default MonthlyExpenses;
+export default Expenses;
