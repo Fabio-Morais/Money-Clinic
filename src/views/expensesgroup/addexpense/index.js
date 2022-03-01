@@ -12,7 +12,7 @@ function AddExpense() {
             <Container>
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item>
-                        <h1>Budgets</h1>
+                        <h1>Monthly Budget</h1>
                     </Grid>
                     <Grid item>
                         <Stack direction="horizontal" gap="2">
