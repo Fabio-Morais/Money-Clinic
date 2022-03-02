@@ -10,7 +10,7 @@ function BalanceOptions(param) {
             <Typography variant="caption" color="primary.captation">
                 Current Balance:
             </Typography>
-
+            {/* Top side */}
             <Box
                 sx={{
                     display: 'flex',
@@ -18,9 +18,12 @@ function BalanceOptions(param) {
                     justifyContent: 'space-between'
                 }}
             >
+                {/* Balance and profit */}
                 <CurrentBalance currency="€" profitPercent={profitPercent} />
+                {/* Buttons - add and edit */}
                 <Options />
             </Box>
+            {/* Bottom side - profit per 24h */}
             <Box sx={{ mb: 5, display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                 <Typography variant="body1" sx={{ color: profit > 0 ? 'success.dark' : 'error.dark', fontWeight: 600, fontSize: '15px' }}>
                     {profit > 0 ? '+' : '-'} {Math.abs(profit)}

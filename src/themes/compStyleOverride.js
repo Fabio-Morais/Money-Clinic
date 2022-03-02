@@ -195,6 +195,18 @@ export default function componentStyleOverrides(theme, themeTypography) {
                     cursor: 'pointer'
                 }
             }
+        },
+        MuiDialogContent: {
+            styleOverrides: {
+                root: {
+                    '&::-webkit-scrollbar': {
+                        width: 7
+                    },
+                    '&::-webkit-scrollbar-thumb': {
+                        backgroundColor: theme.colors?.grey300
+                    }
+                }
+            }
         }
     };
 }
