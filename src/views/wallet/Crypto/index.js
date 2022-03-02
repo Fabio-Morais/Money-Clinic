@@ -1,5 +1,6 @@
 import MainCard from 'ui-component/cards/MainCard';
 import DataGrid from './DataGridWallet/DataGridWallet';
+import BalanceOptions from './BalanceOptionsWallet/BalanceOptions';
 
 const rows = [
     {
@@ -32,6 +33,7 @@ const rows = [
 function WalletCrypto() {
     return (
         <MainCard title="Kraken">
+            <BalanceOptions profitPercent={-21.2} profit={-40.2} currency="€" />
             <DataGrid rows={rows} currency="€" />
         </MainCard>
     );
