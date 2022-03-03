@@ -18,7 +18,7 @@ function AddExpense() {
                         <h1>Monthly Budgets</h1>
                     </Grid>
                     <Grid item>
-                        <Stack direction="horizontal" gap="2">
+                        <Stack direction="row" spacing={1}>
                             <Button variant="contained" startIcon={<AddIcon />}>
                                 Add Budget
                             </Button>
@@ -31,6 +31,8 @@ function AddExpense() {
                 <BudgetCard name="Home expenses" amount={200} max={1000} />
                 <BudgetCard name="Food" amount={0} max={200} />
                 <BudgetCard name="Transportation" amount={50} max={100} />
+                <BudgetCard name="Leisure" amount={20} max={50} />
+                <BudgetCard name="Others" amount={50} max={100} />
             </Container>
         </MainCard>
     );
