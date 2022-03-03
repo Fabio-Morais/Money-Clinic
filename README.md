@@ -7,7 +7,8 @@
 # Useful development links:
 * Template documentation: https://codedthemes.gitbook.io/berry/
 * MUI components: https://mui.com/components/
-* Icons: https://tablericons.com
+* Icons Tabler: https://tablericons.com
+* Icons MUI: https://mui.com/components/material-icons/
 * Build: http://moneyclinic.herokuapp.com
 
 # How to add new features:
