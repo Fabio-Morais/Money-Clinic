@@ -1,4 +1,4 @@
-export default function componentStyleOverrides(theme) {
+export default function componentStyleOverrides(theme, themeTypography) {
     const bgColor = theme.colors?.grey50;
     return {
         MuiButton: {
@@ -180,6 +180,31 @@ export default function componentStyleOverrides(theme) {
                 tooltip: {
                     color: theme.paper,
                     background: theme.colors?.grey700
+                }
+            }
+        },
+        MuiDataGrid: {
+            styleOverrides: {
+                root: {
+                    fontWeight: 600,
+                    fontSize: themeTypography.typography.body1.fontSize,
+                    color: theme.colors?.grey900,
+                    '&.MuiDataGrid-root .MuiDataGrid-cell:focus-within': {
+                        outline: 'none'
+                    },
+                    cursor: 'pointer'
+                }
+            }
+        },
+        MuiDialogContent: {
+            styleOverrides: {
+                root: {
+                    '&::-webkit-scrollbar': {
+                        width: 7
+                    },
+                    '&::-webkit-scrollbar-thumb': {
+                        backgroundColor: theme.colors?.grey300
+                    }
                 }
             }
         }

@@ -3,7 +3,7 @@ deleteBranchAfterMerge: true
 reportStatus: true
 
 blockingLabels:
-- blocked
+- In-Progress
 requiredLabels:
 - merge
 
