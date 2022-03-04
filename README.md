@@ -7,14 +7,13 @@
 # Useful development links:
 * Template documentation: https://codedthemes.gitbook.io/berry/
 * MUI components: https://mui.com/components/
-* Icons: https://tablericons.com
+* Icons Tabler: https://tablericons.com
+* Icons MUI: https://mui.com/components/material-icons/
 * Build: http://moneyclinic.herokuapp.com
 
 # How to add new features:
-
 * Create a new branch from **develop**
 * Commit new stuf into that branch
 * Create a Pull Request to **develop**
-  * The Pull Request should have **ONLY** 1 commit. `git rebase -i HEAD~3` -> will squash the 3 commits into 1
   * Insert an image related to that feature
-  * request code review 
+
