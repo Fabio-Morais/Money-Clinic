@@ -1,11 +1,10 @@
-// material-ui
-
 // project imports
 import BudgetCard from './BudgetCard';
-import AddIcon from '@mui/icons-material/Add';
-
-import { Button, Container, Grid, Stack } from '@mui/material';
 import MainCard from 'ui-component/cards/MainCard';
+
+// material ui
+import AddIcon from '@mui/icons-material/Add';
+import { Button, Container, Grid, Stack, Typography } from '@mui/material';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -15,7 +14,7 @@ function AddExpense() {
             <Container>
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item>
-                        <h1>Monthly Budgets</h1>
+                        <Typography variant="h2">Monthly Budgets</Typography>
                     </Grid>
                     <Grid item>
                         <Stack direction="row" spacing={1}>
