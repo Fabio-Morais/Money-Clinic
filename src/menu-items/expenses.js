@@ -1,8 +1,8 @@
 // assets
-import { IconReceiptTax } from '@tabler/icons';
+import { IconReceiptTax, IconSquarePlus } from '@tabler/icons';
 
 // constant
-const icons = { IconReceiptTax };
+const icons = { IconReceiptTax, IconSquarePlus };
 
 // ==============================|| WALLET MENU ITEMS ||============================== //
 
@@ -17,6 +17,14 @@ const expenses = {
             type: 'item',
             url: '/expenses',
             icon: icons.IconReceiptTax,
+            breadcrumbs: false
+        },
+        {
+            id: 'addexpense',
+            title: 'Add Expenses',
+            type: 'item',
+            url: '/addexpense',
+            icon: icons.IconSquarePlus,
             breadcrumbs: false
         }
     ]
