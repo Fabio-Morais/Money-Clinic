@@ -140,7 +140,7 @@ function ProfileSection() {
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
                                 <MainCard border={false} elevation={16} content={false} boxShadow shadow={theme.shadows[16]}>
-                                    <Box sx={{ p: 2 }}>
+                                    <Box sx={{ paddingTop: 2, paddingLeft: 2, paddingRight: 2 }}>
                                         <Stack>
                                             <Stack direction="row" spacing={0.5} alignItems="center">
                                                 <Typography variant="h4">Johne Doer</Typography>
@@ -158,7 +158,11 @@ function ProfileSection() {
                                                 maxWidth: 350,
                                                 minWidth: 300,
                                                 backgroundColor: theme.palette.background.paper,
-                                                borderRadius: '10px'
+                                                borderRadius: '10px',
+                                                paddingTop: '0px',
+                                                paddingBottom: '10px',
+                                                paddingLeft: '10px',
+                                                paddingRight: '10px'
                                             }}
                                         >
                                             <ListItemButton
