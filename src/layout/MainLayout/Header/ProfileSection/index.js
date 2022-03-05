@@ -94,7 +94,7 @@ function ProfileSection() {
                         '& svg': {
                             stroke: theme.palette.primary.light
                         }
-                    },
+                    }
                 }}
                 icon={
                     <Avatar
