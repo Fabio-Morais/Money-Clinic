@@ -95,9 +95,6 @@ function ProfileSection() {
                             stroke: theme.palette.primary.light
                         }
                     },
-                    '& .MuiChip-label': {
-                        lineHeight: 0
-                    }
                 }}
                 icon={
                     <Avatar
@@ -113,12 +110,12 @@ function ProfileSection() {
                         color="inherit"
                     />
                 }
-                label={<IconSettings stroke={1.5} size="1.5rem" color={theme.palette.primary.main} />}
                 variant="outlined"
                 ref={anchorRef}
                 aria-controls={open ? 'menu-list-grow' : undefined}
                 aria-haspopup="true"
                 onClick={handleToggle}
+                label="Johne Doer"
                 color="primary"
             />
             <Popper
