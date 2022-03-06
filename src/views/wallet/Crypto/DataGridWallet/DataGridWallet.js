@@ -25,6 +25,7 @@ function DataGridWallet({ rows, currency }) {
             disableSelectionOnClick
             hideFooter
             rowHeight={65}
+            columnBuffer={10}
             onCellClick={handleOnCellClick}
         />
     );

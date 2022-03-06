@@ -15,8 +15,8 @@ function AddCoinDialog(props) {
 
     return (
         <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
-            <DialogTitle id="responsive-dialog-title">
-                <Typography variant="h2">Select Coin</Typography>
+            <DialogTitle id="responsive-dialog-title" variant="h2">
+                Select Coin
                 <IconButton
                     aria-label="close"
                     onClick={handleClose}

@@ -4,8 +4,7 @@ import { Typography } from '@mui/material';
 
 import { typographyDefault } from './commonDesign';
 
-function RenderHolding(param) {
-    const { rows, currency } = param;
+function RenderHolding({ rows, currency }) {
     return (
         <Box sx={{ flexDirection: 'row' }}>
             <Typography sx={typographyDefault}>
