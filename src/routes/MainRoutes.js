@@ -11,6 +11,7 @@ const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')))
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
 
 const Expenses = Loadable(lazy(() => import('views/expensesgroup/expenses')));
+const AddExpense = Loadable(lazy(() => import('views/expensesgroup/addexpense')));
 
 const Crypto = Loadable(lazy(() => import('views/wallet/Crypto')));
 
@@ -39,6 +40,10 @@ const MainRoutes = {
         {
             path: '/crypto',
             element: <Crypto />
+        },
+        {
+            path: '/addexpense',
+            element: <AddExpense />
         }
     ]
 };
