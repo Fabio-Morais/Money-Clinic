@@ -18,14 +18,10 @@ function Expenses() {
     return (
         <Grid container spacing={gridSpacing}>
             <Grid item xs={6} md={8}>
-                <item>
-                    <TotalGrowthBarChart isLoading={isLoading} />
-                </item>
+                <TotalGrowthBarChart isLoading={isLoading} />
             </Grid>
             <Grid item xs={6} md={4}>
-                <item>
-                    <PopularCard isLoading={isLoading} />
-                </item>
+                <PopularCard isLoading={isLoading} />
             </Grid>
         </Grid>
     );
