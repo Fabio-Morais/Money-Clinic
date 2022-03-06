@@ -159,10 +159,10 @@ function ProfileSection() {
                                                 minWidth: 300,
                                                 backgroundColor: theme.palette.background.paper,
                                                 borderRadius: '10px',
-                                                paddingTop: '0px',
+                                                paddingTop: '10px',
                                                 paddingBottom: '10px',
-                                                paddingLeft: '10px',
-                                                paddingRight: '10px'
+                                                paddingLeft: '5px',
+                                                paddingRight: '5px'
                                             }}
                                         >
                                             <ListItemButton
