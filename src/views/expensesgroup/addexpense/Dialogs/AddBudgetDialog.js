@@ -3,13 +3,13 @@ import { Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-function AddExpenseDialog(props) {
+function AddBudgetDialog(props) {
     const { fullScreen, handleClose, open } = props;
 
     return (
         <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
             <DialogTitle id="responsive-dialog-title">
-                <Typography variant="h2">Add Expense</Typography>
+                <Typography variant="h2">Add Budget</Typography>
                 <IconButton
                     aria-label="close"
                     onClick={handleClose}
@@ -23,9 +23,9 @@ function AddExpenseDialog(props) {
                     <CloseIcon />
                 </IconButton>
             </DialogTitle>
-            <DialogContent sx={{ width: '490px' }}>bbb</DialogContent>
+            <DialogContent sx={{ width: '490px' }}>aaa</DialogContent>
         </Dialog>
     );
 }
 
-export default AddExpenseDialog;
+export default AddBudgetDialog;
