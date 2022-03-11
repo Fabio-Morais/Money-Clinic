@@ -20,7 +20,7 @@ function getColumnsConfiguration(currency) {
             field: 'name',
             headerName: 'Name',
             flex: 2,
-            renderCell: (param) => <RenderAvatarText rows={param} />
+            renderCell: (param) => <helperAvatarText rows={param} />
         },
         {
             field: 'price',
