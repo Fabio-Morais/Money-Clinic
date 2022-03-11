@@ -22,7 +22,7 @@ import { Box } from '@mui/system';
 
 import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 
-import { switchPriceIntoTotal, TRANSFER } from '../Events/SwitchPriceToTotal';
+import { switchPriceIntoTotal, TRANSFER } from '../../../../utils/wallet/common/SwitchPriceToTotal';
 
 function AddTransactionDialog(props) {
     const { fullScreen, handleClose, open } = props;
