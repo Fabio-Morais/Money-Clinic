@@ -24,7 +24,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 // project imports
 import SubCard from 'ui-component/cards/SubCard';
 import AnimateButton from 'ui-component/extended/AnimateButton';
-import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from 'store/actions';
+import { customizationActions } from 'store/customizationSlice';
 import { gridSpacing } from 'store/constant';
 
 // concat 'px'
@@ -52,7 +52,7 @@ function Customization() {
     };
 
     useEffect(() => {
-        dispatch({ type: SET_BORDER_RADIUS, borderRadius });
+        dispatch(customizationActions.setBorderRadius(borderRadius));
     }, [dispatch, borderRadius]);
 
     let initialFont;
@@ -85,7 +85,7 @@ function Customization() {
                 newFont = "'Roboto', sans-serif";
                 break;
         }
-        dispatch({ type: SET_FONT_FAMILY, fontFamily: newFont });
+        dispatch(customizationActions.setFontFamily(newFont));
     }, [dispatch, fontFamily]);
 
     return (
