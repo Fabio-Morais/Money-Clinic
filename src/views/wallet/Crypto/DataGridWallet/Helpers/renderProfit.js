@@ -5,8 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { typographyDefault, colorPick } from './commonDesign';
 
-function RenderProfit(param) {
-    const { rows, currency } = param;
+function RenderProfit({ rows, currency }) {
     return (
         <>
             {rows.row.profitPercent > 0 ? (

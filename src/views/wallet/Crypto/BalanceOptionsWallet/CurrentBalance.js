@@ -3,6 +3,9 @@ import { Box } from '@mui/system';
 
 import ProfitBadget from '../../../../ui-component/profitBadget';
 
+/*
+ * Current balance and profit
+ * */
 function CurrentBalance(param) {
     const { currency, profitPercent } = param;
     return (
