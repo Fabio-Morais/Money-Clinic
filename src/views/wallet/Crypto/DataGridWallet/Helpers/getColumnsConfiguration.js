@@ -9,7 +9,6 @@ import RenderAction from './renderAction';
 import RenderHolding from './renderHolding';
 import RenderProfit from './renderProfit';
 import helperAvatarText from './renderAvatarText';
-import RenderAvatarText from './renderAvatarText';
 
 /**
  * @param currency - € or $
