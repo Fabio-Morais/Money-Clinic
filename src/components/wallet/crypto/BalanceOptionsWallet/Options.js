@@ -6,6 +6,7 @@ import PopupState, { bindMenu, bindTrigger } from 'material-ui-popup-state';
 import { GrEdit } from 'react-icons/gr';
 import AddCoinDialog from './Dialogs/AddCoinDialog';
 import { useState } from 'react';
+
 import AddTransactionDialog from '../../Common/Dialogs/AddTransactionDialog';
 
 const GreyButton = styled(Button)(({ theme }) => ({

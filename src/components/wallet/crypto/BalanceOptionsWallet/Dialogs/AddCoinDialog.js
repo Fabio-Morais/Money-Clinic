@@ -9,6 +9,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { coins } from '../../../../../fakeData/coins';
 
 const typographyDefault = { fontSize: 14, fontWeight: 600 };
+
 /*
  * TODO - get from the backend the "10" coins when the users types something in the search bar
  * */
