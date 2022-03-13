@@ -1,7 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 
-import ProfitBadget from '../../../../ui-component/profitBadget';
+import ProfitBadget from '../../Common/profitBadget';
 
 /*
  * Current balance and profit
