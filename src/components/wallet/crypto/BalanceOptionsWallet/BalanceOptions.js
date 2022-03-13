@@ -21,7 +21,7 @@ function BalanceOptions(param) {
                 {/* Balance and profit */}
                 <CurrentBalance currency="€" profitPercent={profitPercent} />
                 {/* Buttons - add and edit */}
-                <Options />
+                <Options currency="€" />
             </Box>
             {/* Bottom side - profit per 24h */}
             <Box sx={{ mb: 5, display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
