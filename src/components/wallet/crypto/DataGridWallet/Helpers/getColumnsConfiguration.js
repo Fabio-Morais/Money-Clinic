@@ -19,13 +19,13 @@ function getColumnsConfiguration(currency) {
         {
             field: 'name',
             headerName: 'Name',
-            width: 200,
+            flex: 2,
             renderCell: (param) => helperAvatarText({ rows: param })
         },
         {
             field: 'price',
             headerName: 'Price',
-            width: 130,
+            flex: 1,
             renderCell: (param) => (
                 <>
                     <Typography sx={typographyDefault}>
@@ -38,19 +38,19 @@ function getColumnsConfiguration(currency) {
         {
             field: 'var',
             headerName: '24H',
-            width: 130,
-            renderCell: (param) => RenderVar({ rows: param })
+            flex: 1,
+            renderCell: (param) => <RenderVar rows={param} />
         },
         {
             field: 'holding',
             headerName: 'Holding',
-            width: 130,
-            renderCell: (param) => RenderHolding({ rows: param }, { currency })
+            flex: 1,
+            renderCell: (param) => <RenderHolding rows={param} currency={currency} />
         },
         {
             field: 'avg',
             headerName: 'Avg. Buy Price',
-            width: 130,
+            flex: 1,
             renderCell: (param) => (
                 <>
                     <Typography sx={typographyDefault}>
@@ -63,15 +63,15 @@ function getColumnsConfiguration(currency) {
         {
             field: 'profit',
             headerName: 'Profit/Loss',
-            width: 250,
-            renderCell: (param) => RenderProfit({ rows: param }, { currency })
+            flex: 1,
+            renderCell: (param) => <RenderProfit rows={param} currency={currency} />
         },
         {
             field: 'action',
             headerName: 'Action',
             sortable: false,
-            width: 160,
-            renderCell: (param) => RenderAction({ rows: { param } })
+            flex: 1,
+            renderCell: (param) => <RenderAction rows={param} currency={currency} />
         }
     ];
 }

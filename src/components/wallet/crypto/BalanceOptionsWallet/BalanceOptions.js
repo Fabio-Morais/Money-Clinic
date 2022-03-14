@@ -7,7 +7,7 @@ function BalanceOptions(param) {
     const { profit, profitPercent, currency } = param;
     return (
         <>
-            <Typography variant="caption" color="primary.captation">
+            <Typography variant="caption" color="primary.caption">
                 Current Balance:
             </Typography>
             {/* Top side */}

@@ -1,6 +1,6 @@
 // material-ui
 import { Box } from '@mui/system';
-import { IconButton, Menu, MenuItem, Typography } from '@mui/material';
+import { IconButton, Menu, MenuItem, Typography, useMediaQuery } from '@mui/material';
 import PopupState, { bindMenu, bindTrigger } from 'material-ui-popup-state';
 
 // react icons
@@ -9,11 +9,24 @@ import { FiMoreVertical } from 'react-icons/fi';
 import { GrTransaction } from 'react-icons/gr';
 
 // Events
-import handleOnClickAdd from '../Events/onClickAdd';
+import AddTransactionDialog from '../../../Common/Dialogs/AddTransactionDialog';
+import { useState } from 'react';
+import { useTheme } from '@mui/material/styles';
 
-function RenderAction(param) {
-    const { rows } = param;
+function RenderAction({ rows, currency }) {
+    const [open, setOpen] = useState(false);
+    const [coin, setCoin] = useState();
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
+    const handleClickOpen = (event, param) => {
+        setOpen(true);
+        setCoin(param.row);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
         <Box style={{ outline: 'none' }}>
             <IconButton
@@ -21,7 +34,7 @@ function RenderAction(param) {
                 size="small"
                 sx={{ outline: 'none' }}
                 onClick={(event) => {
-                    handleOnClickAdd(event, rows);
+                    handleClickOpen(event, rows);
                 }}
             >
                 <RiAddLine />
@@ -45,6 +58,7 @@ function RenderAction(param) {
                     </>
                 )}
             </PopupState>
+            {open && <AddTransactionDialog fullScreen={fullScreen} handleClose={handleClose} open={open} coin={coin} currency={currency} />}
         </Box>
     );
 }

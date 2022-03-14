@@ -1,8 +1,11 @@
 import { Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 
-import ProfitBadget from '../../../../ui-component/profitBadget';
+import ProfitBadget from '../../Common/profitBadget';
 
+/*
+ * Current balance and profit
+ * */
 function CurrentBalance(param) {
     const { currency, profitPercent } = param;
     return (

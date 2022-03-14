@@ -1,6 +1,6 @@
 import MainCard from 'ui-component/cards/MainCard';
-import DataGrid from './DataGridWallet/DataGridWallet';
-import BalanceOptions from './BalanceOptionsWallet/BalanceOptions';
+import DataGrid from '../../../components/wallet/crypto/DataGridWallet/DataGridWallet';
+import BalanceOptions from '../../../components/wallet/crypto/BalanceOptionsWallet/BalanceOptions';
 
 const rows = [
     {
