@@ -105,7 +105,7 @@ function AddTransactionDialog(props) {
                             alignItems: 'center'
                         }}
                     >
-                        <Avatar sx={{ width: 24, height: 24 }} alt="image" src={coin.image || ''} />
+                        <Avatar sx={{ width: 24, height: 24 }} alt="image" src={typeof coin.image !== 'undefined' ? coin.image : ''} />
                         <Typography
                             variant="h4"
                             sx={{
