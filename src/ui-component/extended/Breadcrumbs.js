@@ -27,7 +27,7 @@ const linkSX = {
 
 // ==============================|| BREADCRUMBS ||============================== //
 
-const Breadcrumbs = ({ card, divider, icon, icons, maxItems, navigation, rightAlign, separator, title, titleBottom, ...others }) => {
+function Breadcrumbs({ card, divider, icon, icons, maxItems, navigation, rightAlign, separator, title, titleBottom, ...others }) {
     const theme = useTheme();
 
     const iconStyle = {
@@ -169,7 +169,7 @@ const Breadcrumbs = ({ card, divider, icon, icons, maxItems, navigation, rightAl
     }
 
     return breadcrumbContent;
-};
+}
 
 Breadcrumbs.propTypes = {
     card: PropTypes.bool,
