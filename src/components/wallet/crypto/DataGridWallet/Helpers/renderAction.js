@@ -12,20 +12,29 @@ import { GrTransaction } from 'react-icons/gr';
 import AddTransactionDialog from '../../../Common/Dialogs/AddTransactionDialog';
 import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
+import ConfirmationDialogDelete from '../../../Common/Dialogs/ConfirmationDialogDelete';
 
-function RenderAction({ rows, currency }) {
+function RenderAction({ rows, currency, handleOnDelete }) {
     const [open, setOpen] = useState(false);
+    const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [coin, setCoin] = useState();
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     const handleClickOpen = (event, param) => {
         setOpen(true);
         setCoin(param.row);
     };
 
+    const handleClickOpenDeleteDialog = (event, data, popupState) => {
+        setOpenDeleteDialog(true);
+        setCoin(data.row);
+        popupState.close();
+    };
     const handleClose = () => {
         setOpen(false);
+    };
+    const handleCloseDeleteDialog = () => {
+        setOpenDeleteDialog(false);
     };
     return (
         <Box style={{ outline: 'none' }}>
@@ -48,9 +57,9 @@ function RenderAction({ rows, currency }) {
                         <Menu {...bindMenu(popupState)}>
                             <MenuItem onClick={popupState.close}>
                                 <GrTransaction size={16} />
-                                <Typography sx={{ fontSize: '15px', fontWeight: '600', marginLeft: '10px' }}> Transations</Typography>
+                                <Typography sx={{ fontSize: '15px', fontWeight: '600', marginLeft: '10px' }}>Transations</Typography>
                             </MenuItem>
-                            <MenuItem onClick={popupState.close}>
+                            <MenuItem onClick={(e) => handleClickOpenDeleteDialog(e, rows, popupState)}>
                                 <RiDeleteBin5Line size={16} />
                                 <Typography sx={{ fontSize: '15px', fontWeight: '600', marginLeft: '10px' }}>Delete Asset</Typography>
                             </MenuItem>
@@ -59,6 +68,13 @@ function RenderAction({ rows, currency }) {
                 )}
             </PopupState>
             {open && <AddTransactionDialog fullScreen={fullScreen} handleClose={handleClose} open={open} coin={coin} currency={currency} />}
+            {openDeleteDialog && (
+                <ConfirmationDialogDelete
+                    handleClose={handleCloseDeleteDialog}
+                    open={openDeleteDialog}
+                    onDelete={(e) => handleOnDelete(e, rows)}
+                />
+            )}
         </Box>
     );
 }
