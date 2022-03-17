@@ -15,11 +15,12 @@ function BalanceOptions(param) {
                 sx={{
                     display: 'flex',
                     flexWrap: 'wrap',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    mt: 0.5
                 }}
             >
                 {/* Balance and profit */}
-                <CurrentBalance currency="€" profitPercent={profitPercent} />
+                <CurrentBalance currency="€" profitPercent={profitPercent} currentBalance={200} />
                 {/* Buttons - add and edit */}
                 <Options currency="€" />
             </Box>

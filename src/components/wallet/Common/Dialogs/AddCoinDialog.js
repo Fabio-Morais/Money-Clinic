@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 // Fake data
-import { coins } from '../../../../../fakeData/coins';
+import { coinsData } from '../../../../fakeData/coins';
 
 const typographyDefault = { fontSize: 14, fontWeight: 600 };
 
@@ -50,7 +50,7 @@ function AddCoinDialog(props) {
                     }}
                 />
                 <Stack sx={{ mt: 2, height: '400px', scrollbarColor: 'red', msScrollbarFaceColor: 'red' }}>
-                    {coins.map((d) => (
+                    {coinsData.map((d) => (
                         <Button
                             key={d.id}
                             variant="text"

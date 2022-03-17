@@ -14,7 +14,7 @@ import helperAvatarText from './renderAvatarText';
  * @param currency - € or $
  * @param pos - -1 ->  negative variation, 1 -> positive variation
  * */
-function getColumnsConfiguration(currency, handleOnDelete) {
+function getColumnsConfiguration(currency, handleOnDelete, transactionHandle) {
     return [
         {
             field: 'name',
@@ -71,7 +71,9 @@ function getColumnsConfiguration(currency, handleOnDelete) {
             headerName: 'Action',
             sortable: false,
             flex: 1,
-            renderCell: (param) => <RenderAction rows={param} currency={currency} handleOnDelete={handleOnDelete} />
+            renderCell: (param) => (
+                <RenderAction rows={param} currency={currency} handleOnDelete={handleOnDelete} transactionHandle={transactionHandle} />
+            )
         }
     ];
 }

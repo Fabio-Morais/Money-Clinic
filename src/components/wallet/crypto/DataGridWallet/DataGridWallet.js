@@ -14,7 +14,7 @@ const handleOnCellClick = (params) => {
  * @param rows - {id, name, image, price, var, holding, avg, profit}
  * @param currency - € or $
  * */
-function DataGridWallet({ rows, currency }) {
+function DataGridWallet({ rows, currency, transactionHandle }) {
     const [coins, setCoins] = useState(rows);
     function handleOnDelete(e, clickedCoin) {
         const newCoins = coins.filter((coin) => coin.id !== clickedCoin.id);
@@ -23,7 +23,7 @@ function DataGridWallet({ rows, currency }) {
     return (
         <DataGrid
             rows={coins}
-            columns={getColumn(currency, handleOnDelete)}
+            columns={getColumn(currency, handleOnDelete, transactionHandle)}
             rowsPerPageOptions={[]}
             autoHeight
             disableColumnFilter
