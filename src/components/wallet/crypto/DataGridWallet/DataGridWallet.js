@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 // Column configuration
 import getColumn from './Helpers/getColumnsConfiguration';
+import { useState } from 'react';
 
 // TODO - On click do something....
 const handleOnCellClick = (params) => {
@@ -14,10 +15,15 @@ const handleOnCellClick = (params) => {
  * @param currency - € or $
  * */
 function DataGridWallet({ rows, currency }) {
+    const [coins, setCoins] = useState(rows);
+    function handleOnDelete(e, clickedCoin) {
+        const newCoins = coins.filter((coin) => coin.id !== clickedCoin.id);
+        setCoins(newCoins);
+    }
     return (
         <DataGrid
-            rows={rows}
-            columns={getColumn(currency)}
+            rows={coins}
+            columns={getColumn(currency, handleOnDelete)}
             rowsPerPageOptions={[]}
             autoHeight
             disableColumnFilter
