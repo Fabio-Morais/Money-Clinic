@@ -19,7 +19,7 @@ function DataGridTransactions({ rows, currency, transactionCoin }) {
 
     const handleOnCellClick = (params) => {
         console.log(params.row);
-        setOpenTransaction({ ...openTransaction, isEnabled: true });
+        setOpenTransaction({ isEnabled: true, coin: params.row });
     };
 
     function handleOnDelete(e, clickedTransaction) {
@@ -29,6 +29,7 @@ function DataGridTransactions({ rows, currency, transactionCoin }) {
     const handleClose = () => {
         setOpenTransaction({ ...openTransaction, isEnabled: false });
     };
+    console.log('dataGrid= ', openTransaction);
     return (
         <>
             <DataGrid
@@ -46,7 +47,9 @@ function DataGridTransactions({ rows, currency, transactionCoin }) {
                 sx={{ mt: '40px' }}
             />
 
-            {openTransaction.isEnabled && <ViewTransaction open={openTransaction.isEnabled} handleClose={handleClose} />}
+            {openTransaction.isEnabled && (
+                <ViewTransaction open={openTransaction.isEnabled} handleClose={handleClose} transactionInfo={openTransaction.coin} />
+            )}
         </>
     );
 }
