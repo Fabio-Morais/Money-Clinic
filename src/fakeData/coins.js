@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/prefer-default-export
-export const coins = [
+export const coinsData = [
     {
         id: 1,
         name: 'Ethereum',
