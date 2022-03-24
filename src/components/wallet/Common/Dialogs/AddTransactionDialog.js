@@ -72,7 +72,7 @@ function AddTransactionDialog(props) {
         setInput(newValues);
     };
     return (
-        <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+        <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title" maxWidth="sm">
             <DialogTitle id="responsive-dialog-title" variant="h2">
                 Add Transaction
                 <IconButton
@@ -88,7 +88,7 @@ function AddTransactionDialog(props) {
                     <CloseIcon />
                 </IconButton>
             </DialogTitle>
-            <DialogContent sx={{ width: '490px' }}>
+            <DialogContent>
                 {/* Menu to choose between BUY, SELL, TRANSFER */}
                 <Tabs variant="fullWidth" value={value} onChange={(event, value) => setValue(value)} aria-label="basic tabs example">
                     <Tab label="Buy" />
