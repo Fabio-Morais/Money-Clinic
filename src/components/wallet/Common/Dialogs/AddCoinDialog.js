@@ -17,7 +17,7 @@ function AddCoinDialog(props) {
     const { fullScreen, handleAddCoin, handleClose, open } = props;
 
     return (
-        <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+        <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title" maxWidth="sm" fullWidth>
             <DialogTitle id="responsive-dialog-title" variant="h2">
                 Select Coin
                 <IconButton
@@ -33,7 +33,7 @@ function AddCoinDialog(props) {
                     <CloseIcon />
                 </IconButton>
             </DialogTitle>
-            <DialogContent sx={{ width: '490px' }}>
+            <DialogContent>
                 <TextField
                     fullWidth
                     id="search"
