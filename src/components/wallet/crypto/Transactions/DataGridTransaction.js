@@ -18,7 +18,8 @@ function DataGridTransactions({ rows, currency, transactionCoin }) {
     const [openTransaction, setOpenTransaction] = useState({ isEnabled: false, coin: {} });
 
     const handleOnCellClick = (params) => {
-        console.log(params.row);
+        if (params.field === 'action') return;
+
         setOpenTransaction({ isEnabled: true, coin: params.row });
     };
 
