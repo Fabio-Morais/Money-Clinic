@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 function AddExpenseDialog(props) {
-    const { fullScreen, handleClose, open } = props;
+    const { fullScreen, handleClose, open, name } = props;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,7 +41,7 @@ function AddExpenseDialog(props) {
                 <Typography variant="body2" sx={{ mt: '32px', fontWeight: 600 }}>
                     Budget
                 </Typography>
-                <TextField type="text" name="quantity" fullWidth />
+                <TextField type="text" defaultValue={name} name="quantity" fullWidth disabled />
                 <Button variant="contained" fullWidth onClick={handleSubmit} sx={{ mt: '32px', p: 1.5, borderRadius: 2 }}>
                     Add
                 </Button>
