@@ -12,7 +12,7 @@ import AddTransactionDialog from '../../Common/Dialogs/AddTransactionDialog';
 const GreyButton = styled(Button)(({ theme }) => ({
     '&:hover': { backgroundColor: theme.palette.grey['300'] }
 }));
-function Options({ currency }) {
+function Options({ currency, addTransactionHandle }) {
     const [open, setOpen] = useState(false);
     const [openTransaction, setOpenTransaction] = useState(false);
     const [coin, setCoin] = useState({});
@@ -62,6 +62,7 @@ function Options({ currency }) {
                 <AddTransactionDialog
                     fullScreen={fullScreen}
                     handleClose={handleClose}
+                    addTransactionHandle={addTransactionHandle}
                     open={openTransaction}
                     coin={coin}
                     currency={currency}

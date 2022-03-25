@@ -4,7 +4,7 @@ import Options from './Options';
 import { Paper, Typography } from '@mui/material';
 
 function BalanceOptions(param) {
-    const { profit, profitPercent, currency } = param;
+    const { profit, profitPercent, currency, addTransactionHandle } = param;
     return (
         <>
             <Typography variant="caption" color="primary.caption">
@@ -22,7 +22,7 @@ function BalanceOptions(param) {
                 {/* Balance and profit */}
                 <CurrentBalance currency="€" profitPercent={profitPercent} currentBalance={200} />
                 {/* Buttons - add and edit */}
-                <Options currency="€" />
+                <Options currency="€" addTransactionHandle={addTransactionHandle} />
             </Box>
             {/* Bottom side - profit per 24h */}
             <Box sx={{ mb: 5, display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
