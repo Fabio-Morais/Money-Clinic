@@ -4,7 +4,7 @@ import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import { styled, useTheme } from '@mui/material/styles';
 import PopupState, { bindMenu, bindTrigger } from 'material-ui-popup-state';
 import { GrEdit } from 'react-icons/gr';
-import AddCoinDialog from './Dialogs/AddCoinDialog';
+import AddCoinDialog from '../../Common/Dialogs/AddCoinDialog';
 import { useState } from 'react';
 
 import AddTransactionDialog from '../../Common/Dialogs/AddTransactionDialog';
@@ -54,12 +54,7 @@ function Options({ currency }) {
                     </>
                 )}
             </PopupState>
-            <Button
-                variant="contained"
-                startIcon={<MdAddCircleOutline />}
-                sx={{ backgroundColor: 'primary.800' }}
-                onClick={handleClickOpen}
-            >
+            <Button variant="contained" startIcon={<MdAddCircleOutline />} onClick={handleClickOpen}>
                 Add new
             </Button>
             <AddCoinDialog fullScreen={fullScreen} handleClose={handleClose} handleAddCoin={handleAddCoin} open={open} />

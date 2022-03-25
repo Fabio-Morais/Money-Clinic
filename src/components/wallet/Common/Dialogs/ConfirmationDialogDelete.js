@@ -3,14 +3,14 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from '@mui/material/styles';
 
-function ConfirmationDialogDelete({ open, handleClose, onDelete }) {
+function ConfirmationDialogDelete({ open, handleClose, onDelete, title, description }) {
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
         <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title" maxWidth="xs" fullWidth>
             <DialogTitle id="responsive-dialog-title" variant="h2">
-                Remove Asset
+                {typeof title !== 'undefined' ? title : 'Remove Asset'}
                 <IconButton
                     aria-label="close"
                     onClick={handleClose}
@@ -25,8 +25,14 @@ function ConfirmationDialogDelete({ open, handleClose, onDelete }) {
                 </IconButton>
             </DialogTitle>
             <DialogContent>
-                <Typography variant="body2">Are you sure you want to remove this coin?</Typography>
-                <Typography variant="body2">Any transactions associated with this coin will also be removed.</Typography>
+                {typeof description === 'undefined' ? (
+                    <>
+                        <Typography variant="body2">Are you sure you want to remove this coin?</Typography>
+                        <Typography variant="body2">Any transactions associated with this coin will also be removed.</Typography>
+                    </>
+                ) : (
+                    <Typography variant="body2">{description}</Typography>
+                )}
                 <Stack spacing={1} sx={{ mt: '32px', mb: '16px' }}>
                     <Button
                         variant="contained"

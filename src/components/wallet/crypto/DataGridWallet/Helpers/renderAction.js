@@ -14,7 +14,7 @@ import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import ConfirmationDialogDelete from '../../../Common/Dialogs/ConfirmationDialogDelete';
 
-function RenderAction({ rows, currency, handleOnDelete }) {
+function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
     const [open, setOpen] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [coin, setCoin] = useState();
@@ -55,7 +55,7 @@ function RenderAction({ rows, currency, handleOnDelete }) {
                             <FiMoreVertical />
                         </IconButton>
                         <Menu {...bindMenu(popupState)}>
-                            <MenuItem onClick={popupState.close}>
+                            <MenuItem onClick={(e) => transactionHandle(e, rows)}>
                                 <GrTransaction size={16} />
                                 <Typography sx={{ fontSize: '15px', fontWeight: '600', marginLeft: '10px' }}>Transations</Typography>
                             </MenuItem>

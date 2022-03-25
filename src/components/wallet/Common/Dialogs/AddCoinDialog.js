@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 // Fake data
-import { coins } from '../../../../../fakeData/coins';
+import { coinsData } from '../../../../fakeData/coins';
 
 const typographyDefault = { fontSize: 14, fontWeight: 600 };
 
@@ -17,7 +17,7 @@ function AddCoinDialog(props) {
     const { fullScreen, handleAddCoin, handleClose, open } = props;
 
     return (
-        <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+        <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title" maxWidth="sm" fullWidth>
             <DialogTitle id="responsive-dialog-title" variant="h2">
                 Select Coin
                 <IconButton
@@ -33,7 +33,7 @@ function AddCoinDialog(props) {
                     <CloseIcon />
                 </IconButton>
             </DialogTitle>
-            <DialogContent sx={{ width: '490px' }}>
+            <DialogContent>
                 <TextField
                     fullWidth
                     id="search"
@@ -50,7 +50,7 @@ function AddCoinDialog(props) {
                     }}
                 />
                 <Stack sx={{ mt: 2, height: '400px', scrollbarColor: 'red', msScrollbarFaceColor: 'red' }}>
-                    {coins.map((d) => (
+                    {coinsData.map((d) => (
                         <Button
                             key={d.id}
                             variant="text"
