@@ -1,37 +1,42 @@
 // project imports
-import BudgetCard from './BudgetCard';
 import MainCard from 'ui-component/cards/MainCard';
+
+import AddBudgetDialog from './Dialogs/AddBudgetDialog';
+import { useState } from 'react';
+import BudgetCardWrapper from './BudgetCardWrapper';
 
 // material ui
 import AddIcon from '@mui/icons-material/Add';
-import { Button, Container, Grid, Stack, Typography } from '@mui/material';
+import { Button, Container, Grid, Stack, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
 function AddExpense() {
+    const [openAddBudget, setOpenAddBudget] = useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+    const buttonClickOpenAddBudgetHandler = () => {
+        setOpenAddBudget(true);
+    };
+
+    const buttonClickCloseAddBudgetHandler = () => {
+        setOpenAddBudget(false);
+    };
+
     return (
-        <MainCard>
+        <MainCard title="Monthly Budgets">
             <Container>
-                <Grid container alignItems="center" justifyContent="space-between">
-                    <Grid item>
-                        <Typography variant="h2">Monthly Budgets</Typography>
-                    </Grid>
-                    <Grid item>
-                        <Stack direction="row" spacing={1}>
-                            <Button variant="contained" startIcon={<AddIcon />}>
-                                Add Budget
-                            </Button>
-                            <Button variant="outlined" startIcon={<AddIcon />}>
-                                Add Expense
-                            </Button>
-                        </Stack>
-                    </Grid>
+                <Grid container alignItems="center" justifyContent="flex-end">
+                    <Stack direction="row" spacing={1}>
+                        <Button variant="contained" startIcon={<AddIcon />} onClick={buttonClickOpenAddBudgetHandler}>
+                            Add Budget
+                        </Button>
+                        <AddBudgetDialog fullScreen={fullScreen} handleClose={buttonClickCloseAddBudgetHandler} open={openAddBudget} />
+                    </Stack>
                 </Grid>
-                <BudgetCard name="Home expenses" amount={200} max={1000} />
-                <BudgetCard name="Food" amount={0} max={200} />
-                <BudgetCard name="Transportation" amount={50} max={100} />
-                <BudgetCard name="Leisure" amount={20} max={50} />
-                <BudgetCard name="Others" amount={50} max={100} />
+                <BudgetCardWrapper />
             </Container>
         </MainCard>
     );

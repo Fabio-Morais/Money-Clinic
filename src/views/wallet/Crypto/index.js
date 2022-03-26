@@ -1,41 +1,46 @@
 import MainCard from 'ui-component/cards/MainCard';
-import DataGrid from './DataGridWallet/DataGridWallet';
-import BalanceOptions from './BalanceOptionsWallet/BalanceOptions';
+import DataGrid from '../../../components/wallet/crypto/DataGridWallet/DataGridWallet';
+import BalanceOptions from '../../../components/wallet/crypto/BalanceOptionsWallet/BalanceOptions';
 
-const rows = [
-    {
-        id: 1,
-        name: 'Ethereum',
-        shortName: 'ETH',
-        image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
-        price: '235',
-        var: '3.1',
-        holding: '1542',
-        holdingCoin: '0.11',
-        avg: '35',
-        profit: '35',
-        profitPercent: '2'
-    },
-    {
-        id: 2,
-        name: 'Bitcoin',
-        shortName: 'BTC',
-        image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-        price: '1235',
-        var: '-0.3',
-        holding: '152',
-        holdingCoin: '324',
-        avg: '15€',
-        profit: '-15',
-        profitPercent: '-2'
-    }
-];
+// Fake data
+import { coinsData } from '../../../fakeData/coins';
+import { transactionCoinsData } from '../../../fakeData/transactionCoins';
+
+import { useState } from 'react';
+
+import BackButton from '../../../components/wallet/crypto/Transactions/BackButton';
+import BalanceOptionsTransactions from '../../../components/wallet/crypto/Transactions/BalanceOptionsTransactions';
+import DataGridTransaction from '../../../components/wallet/crypto/Transactions/DataGridTransaction';
+
 function WalletCrypto() {
+    const [transaction, setTransaction] = useState({ isEnabled: false, coin: {} });
+
+    const transactionHandle = (event, data) => {
+        setTransaction({ isEnabled: true, coin: data.row });
+    };
+    const backClickHandle = () => {
+        setTransaction({ ...transaction, isEnabled: false });
+    };
+
     return (
-        <MainCard title="Kraken">
-            <BalanceOptions profitPercent={-21.2} profit={-40.2} currency="€" />
-            <DataGrid rows={rows} currency="€" />
-        </MainCard>
+        <>
+            {/* PORFOLIO PAGE - Page that shows all the porfolio */}
+            {!transaction.isEnabled && (
+                <MainCard title="Kraken">
+                    <BalanceOptions profitPercent={-21.2} profit={-40.2} currency="€" />
+                    <DataGrid rows={coinsData} currency="€" transactionHandle={transactionHandle} />
+                </MainCard>
+            )}
+
+            {/* TRANSACTION PAGE - Page to show the Transaction for a specific coin */}
+            {transaction.isEnabled && (
+                <MainCard title="Transactions">
+                    <BackButton backClickHandle={backClickHandle} />
+                    <BalanceOptionsTransactions coin={transaction.coin} currency="€" />
+                    <DataGridTransaction rows={transactionCoinsData} currency="€" transactionCoin={transaction} />
+                </MainCard>
+            )}
+        </>
     );
 }
 
