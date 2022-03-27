@@ -12,7 +12,8 @@ import {
     Tab,
     Tabs,
     TextField,
-    Typography
+    Typography,
+    useMediaQuery
 } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -23,18 +24,38 @@ import { Box } from '@mui/system';
 import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 
 import { switchPriceIntoTotal, TRANSFER } from '../../../../utils/wallet/common/SwitchPriceToTotal';
+import { useTheme } from '@mui/material/styles';
 
-function AddTransactionDialog(props) {
-    const { fullScreen, handleClose, open } = props;
+function AddEditTransactionDialog(props) {
+    const { handleClose, open } = props;
     const { coin, currency } = props;
+    const { edit } = props;
     const [value, setValue] = useState(0);
     const [transferOption, setTransferOption] = useState('0');
     const [switchSpent, setSwitchSpent] = useState('price');
     const [total, setTotal] = useState(0);
-    const [input, setInput] = useState({
+
+    let editObject = {
+        type: '',
+        pricePerCoin: '',
+        totalAmount: '',
         quantity: '',
-        pricePerCoin: ''
-    });
+        fees: ''
+    };
+    // Means that is edit state
+    if (typeof edit !== 'undefined') {
+        editObject = {
+            type: edit.type,
+            pricePerCoin: edit.price,
+            totalAmount: edit.totalAmount,
+            quantity: edit.totalAmountCoin,
+            fees: edit.fees
+        };
+    }
+    const [input, setInput] = useState(editObject);
+
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     const calcTotal = (newValues) => {
         const { quantity, pricePerCoin } = newValues;
@@ -233,4 +254,4 @@ function AddTransactionDialog(props) {
     );
 }
 
-export default AddTransactionDialog;
+export default AddEditTransactionDialog;

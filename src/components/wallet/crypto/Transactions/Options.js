@@ -1,16 +1,13 @@
 // material ui
-import { Button, Stack, useMediaQuery } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 
 // icons
 import { MdAddCircleOutline } from 'react-icons/md';
-import AddTransactionDialog from '../../Common/Dialogs/AddTransactionDialog';
+import AddEditTransactionDialog from '../../Common/Dialogs/AddEditTransactionDialog';
 import { useState } from 'react';
-import { useTheme } from '@mui/material/styles';
 
 function Options({ currency, coin }) {
     const [openTransaction, setOpenTransaction] = useState(false);
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
     const closeHandle = () => {
         setOpenTransaction(false);
     };
@@ -25,13 +22,7 @@ function Options({ currency, coin }) {
                 </Button>
             </Stack>
             {openTransaction && (
-                <AddTransactionDialog
-                    fullScreen={fullScreen}
-                    handleClose={closeHandle}
-                    open={openTransaction}
-                    coin={coin}
-                    currency={currency}
-                />
+                <AddEditTransactionDialog handleClose={closeHandle} open={openTransaction} coin={coin} currency={currency} />
             )}
         </>
     );
