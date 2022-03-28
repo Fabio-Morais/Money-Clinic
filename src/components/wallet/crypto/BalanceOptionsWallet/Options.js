@@ -8,13 +8,15 @@ import AddCoinDialog from '../../Common/Dialogs/AddCoinDialog';
 import { useState } from 'react';
 
 import AddEditTransactionDialog from '../../Common/Dialogs/AddEditTransactionDialog';
+import EditPortfolioDialog from '../../Common/Dialogs/EditPortfolioDialog';
 
 const GreyButton = styled(Button)(({ theme }) => ({
     '&:hover': { backgroundColor: theme.palette.grey['300'] }
 }));
-function Options({ currency }) {
+function Options({ currency, portfolioHandle }) {
     const [open, setOpen] = useState(false);
     const [openTransaction, setOpenTransaction] = useState(false);
+    const [openEditPortfolio, setOpenEditPortfolio] = useState(false);
     const [coin, setCoin] = useState({});
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -46,7 +48,12 @@ function Options({ currency }) {
                             More
                         </GreyButton>
                         <Menu {...bindMenu(popupState)}>
-                            <MenuItem onClick={popupState.close}>
+                            <MenuItem
+                                onClick={() => {
+                                    popupState.close();
+                                    setOpenEditPortfolio(true);
+                                }}
+                            >
                                 <GrEdit size={16} />
                                 <Typography sx={{ fontSize: '15px', fontWeight: '600', marginLeft: '10px' }}> Edit Portfolio</Typography>
                             </MenuItem>
@@ -65,6 +72,13 @@ function Options({ currency }) {
                     open={openTransaction}
                     coin={coin}
                     currency={currency}
+                />
+            )}
+            {openEditPortfolio && (
+                <EditPortfolioDialog
+                    portfolioHandle={portfolioHandle}
+                    open={openEditPortfolio}
+                    closeEditDialogHandle={() => setOpenEditPortfolio(false)}
                 />
             )}
         </Stack>
