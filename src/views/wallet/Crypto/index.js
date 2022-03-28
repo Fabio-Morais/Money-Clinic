@@ -15,6 +15,7 @@ import DataGridTransaction from '../../../components/wallet/crypto/Transactions/
 function WalletCrypto() {
     const [transaction, setTransaction] = useState({ isEnabled: false, coin: {} });
     const [coins, setCoins] = useState(coinsData);
+    const [portfolio, setPortfolio] = useState({ name: 'Wallet' });
 
     const transactionHandle = (event, data) => {
         setTransaction({ isEnabled: true, coin: data.row });
@@ -22,6 +23,7 @@ function WalletCrypto() {
     const backClickHandle = () => {
         setTransaction({ ...transaction, isEnabled: false });
     };
+
     const handleOnDelete = (e, clickedCoin) => {
         const newCoins = coins.filter((coin) => coin.id !== clickedCoin.id);
         setCoins(newCoins);
@@ -31,14 +33,19 @@ function WalletCrypto() {
         if (index !== -1) {
             setCoins([...coins, clickedCoin]);
         }
+
+    const portfolioHandle = (nameString) => {
+        setPortfolio({ ...portfolio, name: nameString });
+
     };
     return (
         <>
             {/* PORFOLIO PAGE - Page that shows all the porfolio */}
             {!transaction.isEnabled && (
-                <MainCard title="Kraken">
-                    <BalanceOptions profitPercent={-21.2} profit={-40.2} currency="€" addTransactionHandle={addTransactionHandle} />
-                    <DataGrid rows={coins} currency="€" transactionHandle={transactionHandle} handleOnDelete={handleOnDelete} />
+                <MainCard title={portfolio.name}>
+                    <BalanceOptions profitPercent={-21.2} profit={-40.2} currency="€" portfolioHandle={portfolioHandle} addTransactionHandle={addTransactionHandle} />
+                    <DataGrid rows={coinsData} currency="€" transactionHandle={transactionHandle} handleOnDelete={handleOnDelete}/>
+
                 </MainCard>
             )}
 
