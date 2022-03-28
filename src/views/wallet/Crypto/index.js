@@ -27,11 +27,8 @@ function WalletCrypto() {
         setCoins(newCoins);
     };
     const addTransactionHandle = (e, clickedCoin) => {
-        console.log(clickedCoin);
-        console.log(coins);
         const index = coins.findIndex((coin) => coin.id === clickedCoin.id);
-        console.log(index);
-        if (index !== 0) {
+        if (index !== -1) {
             setCoins([...coins, clickedCoin]);
         }
     };
