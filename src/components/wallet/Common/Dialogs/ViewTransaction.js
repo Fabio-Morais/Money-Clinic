@@ -4,14 +4,25 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 function ViewTransaction({ open, handleClose, transactionInfo }) {
-    const viewData = {
+    /* Transfer In and Transfer Out */
+    let viewData = {
         Type: ['Type', transactionInfo.type],
         Date: ['Date', transactionInfo.date],
-        Price: ['Price Per Coin', transactionInfo.price],
         TotalAmountCoin: ['Quantity', `${transactionInfo.totalAmountCoin} ${transactionInfo.shortName}`],
-        TotalAmount: ['Total Spent', transactionInfo.totalAmount],
         Fees: ['Fees', transactionInfo.fees]
     };
+    /* Buy and Sell */
+    if (transactionInfo.type.toLowerCase() === 'buy' || transactionInfo.type.toLowerCase() === 'sell') {
+        viewData = {
+            Type: ['Type', transactionInfo.type],
+            Date: ['Date', transactionInfo.date],
+            TotalAmountCoin: ['Quantity', `${transactionInfo.totalAmountCoin} ${transactionInfo.shortName}`],
+            Price: ['Price Per Coin', transactionInfo.price],
+            TotalAmount: ['Total Spent', transactionInfo.totalAmount],
+            Fees: ['Fees', transactionInfo.fees]
+        };
+    }
+
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
