@@ -33,19 +33,24 @@ function WalletCrypto() {
         if (index === -1) {
             setCoins([...coins, clickedCoin]);
         }
+    };
 
     const portfolioHandle = (nameString) => {
         setPortfolio({ ...portfolio, name: nameString });
-
     };
     return (
         <>
             {/* PORFOLIO PAGE - Page that shows all the porfolio */}
             {!transaction.isEnabled && (
                 <MainCard title={portfolio.name}>
-                    <BalanceOptions profitPercent={-21.2} profit={-40.2} currency="€" portfolioHandle={portfolioHandle} addTransactionHandle={addTransactionHandle} />
-                    <DataGrid rows={coinsData} currency="€" transactionHandle={transactionHandle} handleOnDelete={handleOnDelete}/>
-
+                    <BalanceOptions
+                        profitPercent={-21.2}
+                        profit={-40.2}
+                        currency="€"
+                        portfolioHandle={portfolioHandle}
+                        addTransactionHandle={addTransactionHandle}
+                    />
+                    <DataGrid rows={coins} currency="€" transactionHandle={transactionHandle} handleOnDelete={handleOnDelete} />
                 </MainCard>
             )}
 
