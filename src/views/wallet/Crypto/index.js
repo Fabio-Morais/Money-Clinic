@@ -30,7 +30,7 @@ function WalletCrypto() {
     };
     const addTransactionHandle = (e, clickedCoin) => {
         const index = coins.findIndex((coin) => coin.id === clickedCoin.id);
-        if (index !== -1) {
+        if (index === -1) {
             setCoins([...coins, clickedCoin]);
         }
 
