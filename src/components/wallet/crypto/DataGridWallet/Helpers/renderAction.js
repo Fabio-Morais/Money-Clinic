@@ -24,7 +24,6 @@ function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
         setOpen(true);
         setCoin(param.row);
     };
-
     const handleClickOpenDeleteDialog = (event, data, popupState) => {
         setOpenDeleteDialog(true);
         setCoin(data.row);
@@ -35,6 +34,9 @@ function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
     };
     const handleCloseDeleteDialog = () => {
         setOpenDeleteDialog(false);
+    };
+    const addTransactionHandle = () => {
+        /* Intentionally blank */
     };
     return (
         <Box style={{ outline: 'none' }}>
@@ -67,7 +69,16 @@ function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
                     </>
                 )}
             </PopupState>
-            {open && <AddTransactionDialog fullScreen={fullScreen} handleClose={handleClose} open={open} coin={coin} currency={currency} />}
+            {open && (
+                <AddTransactionDialog
+                    fullScreen={fullScreen}
+                    handleClose={handleClose}
+                    open={open}
+                    coin={coin}
+                    currency={currency}
+                    addTransactionHandle={addTransactionHandle}
+                />
+            )}
             {openDeleteDialog && (
                 <ConfirmationDialogDelete
                     handleClose={handleCloseDeleteDialog}

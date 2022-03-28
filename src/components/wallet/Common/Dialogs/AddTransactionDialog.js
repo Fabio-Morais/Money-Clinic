@@ -25,7 +25,7 @@ import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 import { switchPriceIntoTotal, TRANSFER } from '../../../../utils/wallet/common/SwitchPriceToTotal';
 
 function AddTransactionDialog(props) {
-    const { fullScreen, handleClose, open } = props;
+    const { fullScreen, handleClose, addTransactionHandle, open } = props;
     const { coin, currency } = props;
     const [value, setValue] = useState(0);
     const [transferOption, setTransferOption] = useState('0');
@@ -225,7 +225,15 @@ function AddTransactionDialog(props) {
                     </Stack>
                 )}
                 {/* Button to submit the transaction */}
-                <Button variant="contained" fullWidth sx={{ mt: '32px', p: 1.5, borderRadius: 2 }}>
+                <Button
+                    variant="contained"
+                    fullWidth
+                    sx={{ mt: '32px', p: 1.5, borderRadius: 2 }}
+                    onClick={(e) => {
+                        addTransactionHandle(e, coin);
+                        handleClose();
+                    }}
+                >
                     Add Transaction
                 </Button>
             </DialogContent>
