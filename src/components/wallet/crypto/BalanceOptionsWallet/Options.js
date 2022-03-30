@@ -7,7 +7,7 @@ import { GrEdit } from 'react-icons/gr';
 import AddCoinDialog from '../../Common/Dialogs/AddCoinDialog';
 import { useState } from 'react';
 
-import AddTransactionDialog from '../../Common/Dialogs/AddTransactionDialog';
+import AddEditTransactionDialog from '../../Common/Dialogs/AddEditTransactionDialog';
 import EditPortfolioDialog from '../../Common/Dialogs/EditPortfolioDialog';
 
 const GreyButton = styled(Button)(({ theme }) => ({
@@ -67,7 +67,7 @@ function Options({ currency, addTransactionHandle, portfolioHandle }) {
             </Button>
             <AddCoinDialog fullScreen={fullScreen} handleClose={handleClose} handleAddCoin={handleAddCoin} open={open} />
             {openTransaction && (
-                <AddTransactionDialog
+                <AddEditTransactionDialog
                     fullScreen={fullScreen}
                     handleClose={handleClose}
                     addTransactionHandle={addTransactionHandle}

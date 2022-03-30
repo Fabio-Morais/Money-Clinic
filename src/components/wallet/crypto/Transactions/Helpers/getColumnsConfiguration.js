@@ -52,7 +52,7 @@ function getColumnsConfiguration(currency, handleOnDelete, transactionCoin) {
             headerName: 'Action',
             sortable: false,
             flex: 1,
-            renderCell: (param) => <RenderAction rows={param} handleOnDelete={handleOnDelete} />
+            renderCell: (param) => <RenderAction rows={param} handleOnDelete={handleOnDelete} transactionCoin={transactionCoin.coin} />
         }
     ];
 }

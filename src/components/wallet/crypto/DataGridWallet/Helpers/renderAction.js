@@ -1,6 +1,6 @@
 // material-ui
 import { Box } from '@mui/system';
-import { IconButton, Menu, MenuItem, Typography, useMediaQuery } from '@mui/material';
+import { IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import PopupState, { bindMenu, bindTrigger } from 'material-ui-popup-state';
 
 // react icons
@@ -9,21 +9,21 @@ import { FiMoreVertical } from 'react-icons/fi';
 import { GrTransaction } from 'react-icons/gr';
 
 // Events
-import AddTransactionDialog from '../../../Common/Dialogs/AddTransactionDialog';
-import { useState } from 'react';
-import { useTheme } from '@mui/material/styles';
+import AddTransactionDialog from '../../../Common/Dialogs/AddEditTransactionDialog';
 import ConfirmationDialogDelete from '../../../Common/Dialogs/ConfirmationDialogDelete';
+
+import { useState } from 'react';
 
 function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
     const [open, setOpen] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [coin, setCoin] = useState();
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+
     const handleClickOpen = (event, param) => {
         setOpen(true);
         setCoin(param.row);
     };
+
     const handleClickOpenDeleteDialog = (event, data, popupState) => {
         setOpenDeleteDialog(true);
         setCoin(data.row);
@@ -71,7 +71,6 @@ function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
             </PopupState>
             {open && (
                 <AddTransactionDialog
-                    fullScreen={fullScreen}
                     handleClose={handleClose}
                     open={open}
                     coin={coin}

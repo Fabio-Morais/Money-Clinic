@@ -12,29 +12,81 @@ import {
     Tab,
     Tabs,
     TextField,
-    Typography
+    Typography,
+    useMediaQuery
 } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box } from '@mui/system';
 
 import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 
 import { switchPriceIntoTotal, TRANSFER } from '../../../../utils/wallet/common/SwitchPriceToTotal';
+import { useTheme } from '@mui/material/styles';
 
-function AddTransactionDialog(props) {
-    const { fullScreen, handleClose, addTransactionHandle, open } = props;
+function getTypeEdit(type) {
+    if (type.toLowerCase() === 'buy') {
+        return 0;
+    }
+    if (type.toLowerCase() === 'sell') {
+        return 1;
+    }
+    if (type.toLowerCase() === 'transfer in' || type.toLowerCase() === 'transfer out') {
+        return 2;
+    }
+    return -1;
+}
+function getTypeTransferEdit(type) {
+    if (type.toLowerCase() === 'transfer in') {
+        return 0;
+    }
+    if (type.toLowerCase() === 'transfer out') {
+        return 1;
+    }
+    return -1;
+}
+
+function AddEditTransactionDialog(props) {
+    const { handleClose, addTransactionHandle, open } = props;
     const { coin, currency } = props;
+    const { edit } = props;
     const [value, setValue] = useState(0);
-    const [transferOption, setTransferOption] = useState('0');
+    const [transferOption, setTransferOption] = useState(0);
     const [switchSpent, setSwitchSpent] = useState('price');
     const [total, setTotal] = useState(0);
-    const [input, setInput] = useState({
+    const editMode = !!edit;
+
+    let editObject = {
+        type: '',
+        pricePerCoin: '',
+        totalAmount: '',
         quantity: '',
-        pricePerCoin: ''
-    });
+        fees: ''
+    };
+    if (editMode) {
+        editObject = {
+            type: edit.type,
+            pricePerCoin: edit.price,
+            totalAmount: edit.totalAmount,
+            quantity: edit.totalAmountCoin,
+            fees: edit.fees
+        };
+    }
+    const [input, setInput] = useState(editObject);
+
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+    useEffect(() => {
+        if (editMode) {
+            setValue(getTypeEdit(edit.type));
+            setTotal(edit.totalAmount);
+            setTransferOption(getTypeTransferEdit(edit.type));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const calcTotal = (newValues) => {
         const { quantity, pricePerCoin } = newValues;
@@ -74,7 +126,7 @@ function AddTransactionDialog(props) {
     return (
         <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title" maxWidth="sm">
             <DialogTitle id="responsive-dialog-title" variant="h2">
-                Add Transaction
+                {editMode ? 'Edit Transaction' : 'Add Transaction'}
                 <IconButton
                     aria-label="close"
                     onClick={handleClose}
@@ -234,11 +286,11 @@ function AddTransactionDialog(props) {
                         handleClose();
                     }}
                 >
-                    Add Transaction
+                    {editMode ? 'Edit Transaction' : 'Add Transaction'}
                 </Button>
             </DialogContent>
         </Dialog>
     );
 }
 
-export default AddTransactionDialog;
+export default AddEditTransactionDialog;
