@@ -35,6 +35,9 @@ function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
     const handleCloseDeleteDialog = () => {
         setOpenDeleteDialog(false);
     };
+    const addTransactionHandle = () => {
+        /* Intentionally blank */
+    };
     return (
         <Box style={{ outline: 'none' }}>
             <IconButton
@@ -66,7 +69,15 @@ function RenderAction({ rows, currency, handleOnDelete, transactionHandle }) {
                     </>
                 )}
             </PopupState>
-            {open && <AddTransactionDialog handleClose={handleClose} open={open} coin={coin} currency={currency} />}
+            {open && (
+                <AddTransactionDialog
+                    handleClose={handleClose}
+                    open={open}
+                    coin={coin}
+                    currency={currency}
+                    addTransactionHandle={addTransactionHandle}
+                />
+            )}
             {openDeleteDialog && (
                 <ConfirmationDialogDelete
                     handleClose={handleCloseDeleteDialog}

@@ -27,7 +27,7 @@ import { switchPriceIntoTotal, TRANSFER } from '../../../../utils/wallet/common/
 import { useTheme } from '@mui/material/styles';
 
 function AddEditTransactionDialog(props) {
-    const { handleClose, open } = props;
+    const { handleClose, addTransactionHandle, open } = props;
     const { coin, currency } = props;
     const { edit } = props;
     const [value, setValue] = useState(0);
@@ -246,7 +246,15 @@ function AddEditTransactionDialog(props) {
                     </Stack>
                 )}
                 {/* Button to submit the transaction */}
-                <Button variant="contained" fullWidth sx={{ mt: '32px', p: 1.5, borderRadius: 2 }}>
+                <Button
+                    variant="contained"
+                    fullWidth
+                    sx={{ mt: '32px', p: 1.5, borderRadius: 2 }}
+                    onClick={(e) => {
+                        addTransactionHandle(e, coin);
+                        handleClose();
+                    }}
+                >
                     Add Transaction
                 </Button>
             </DialogContent>

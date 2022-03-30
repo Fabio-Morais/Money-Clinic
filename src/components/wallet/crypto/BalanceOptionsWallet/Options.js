@@ -13,7 +13,8 @@ import EditPortfolioDialog from '../../Common/Dialogs/EditPortfolioDialog';
 const GreyButton = styled(Button)(({ theme }) => ({
     '&:hover': { backgroundColor: theme.palette.grey['300'] }
 }));
-function Options({ currency, portfolioHandle }) {
+
+function Options({ currency, addTransactionHandle, portfolioHandle }) {
     const [open, setOpen] = useState(false);
     const [openTransaction, setOpenTransaction] = useState(false);
     const [openEditPortfolio, setOpenEditPortfolio] = useState(false);
@@ -69,6 +70,7 @@ function Options({ currency, portfolioHandle }) {
                 <AddEditTransactionDialog
                     fullScreen={fullScreen}
                     handleClose={handleClose}
+                    addTransactionHandle={addTransactionHandle}
                     open={openTransaction}
                     coin={coin}
                     currency={currency}
